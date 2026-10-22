@@ -1,0 +1,14 @@
+{
+  "word_bits": 64,
+  "fields": {
+    "operation": {"msb": 63, "lsb": 62, "codes": {"LEAF": 0, "NUMERIC_LE": 1, "CATEGORY_EQ": 2, "INVALID": 3}},
+    "feature_id": {"msb": 61, "lsb": 56},
+    "operand": {"msb": 55, "lsb": 34},
+    "true_child": {"msb": 33, "lsb": 22},
+    "false_child": {"msb": 21, "lsb": 10},
+    "class_id": {"msb": 9, "lsb": 4},
+    "flags": {"msb": 3, "lsb": 0}
+  },
+  "root_node": 0,
+  "invalid_child": 4095
+}

@@ -1,0 +1,108 @@
+[
+ {
+  "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/top_acg525_ids_core.v",
+  "InstLine" : 3,
+  "InstName" : "top_acg525_ids_core",
+  "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/top_acg525_ids_core.v",
+  "ModuleLine" : 3,
+  "ModuleName" : "top_acg525_ids_core",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/top_acg525_ids_core.v",
+    "InstLine" : 9,
+    "InstName" : "rx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/rmii_deserializer.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "rmii_deserializer"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/top_acg525_ids_core.v",
+    "InstLine" : 14,
+    "InstName" : "udp_rx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_udp_feature_rx.v",
+    "ModuleLine" : 6,
+    "ModuleName" : "ids_udp_feature_rx"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/top_acg525_ids_core.v",
+    "InstLine" : 15,
+    "InstName" : "classifier",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_top_live.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "ids_top_live",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_top_live.v",
+      "InstLine" : 13,
+      "InstName" : "ingest",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_ingest.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "ids_feature_ingest",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_ingest.v",
+        "InstLine" : 21,
+        "InstName" : "quantizer",
+        "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_quantizer.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "ids_feature_quantizer"
+       }
+      ]
+     },
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_top_live.v",
+      "InstLine" : 15,
+      "InstName" : "engine",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_tree_engine_live.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "ids_tree_engine_live",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_tree_engine_live.v",
+        "InstLine" : 21,
+        "InstName" : "rom",
+        "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_tree_rom_banked.v",
+        "ModuleLine" : 5,
+        "ModuleName" : "ids_tree_rom_banked"
+       },
+       {
+        "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_tree_engine_live.v",
+        "InstLine" : 23,
+        "InstName" : "decoder",
+        "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_node_decoder.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "ids_node_decoder"
+       },
+       {
+        "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_tree_engine_live.v",
+        "InstLine" : 24,
+        "InstName" : "feature_bank",
+        "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_regfile.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "ids_feature_regfile"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/top_acg525_ids_core.v",
+    "InstLine" : 22,
+    "InstName" : "udp_tx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_udp_reply_tx.v",
+    "ModuleLine" : 5,
+    "ModuleName" : "ids_udp_reply_tx",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_udp_reply_tx.v",
+      "InstLine" : 49,
+      "InstName" : "serializer",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/rmii_serializer.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "rmii_serializer"
+     }
+    ]
+   }
+  ]
+ }
+]

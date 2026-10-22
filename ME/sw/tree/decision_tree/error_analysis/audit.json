@@ -1,0 +1,12 @@
+{
+  "source_run": "D:\\TranDangNhatTan_24IC054_VKU\\Junior\\FPGA_MCU_IDS\\artifacts\\decision_tree",
+  "model_type": "DecisionTreeClassifier",
+  "saved_predictions_sha256": "fbbd739132faaceed25ac77d9d0b683808c125c032161f3ad69005f93fed4174",
+  "model_sha256": "633846def2de0c65790e2c3c8126522f8ecfc448662af65605ae31e7eca1320f",
+  "fit_performed": false,
+  "threshold_changed": false,
+  "dataset_hashes_match": true,
+  "saved_predictions_match_tree_paths": true,
+  "misclassified_count": 4841,
+  "attack_types_in_test": 37
+}

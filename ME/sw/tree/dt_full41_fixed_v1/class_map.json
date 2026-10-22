@@ -1,0 +1,10 @@
+{
+  "apache2": 0, "back": 1, "buffer_overflow": 2, "ftp_write": 3, "guess_passwd": 4,
+  "httptunnel": 5, "imap": 6, "ipsweep": 7, "land": 8, "loadmodule": 9,
+  "mailbomb": 10, "mscan": 11, "multihop": 12, "named": 13, "neptune": 14,
+  "nmap": 15, "normal": 16, "perl": 17, "phf": 18, "pod": 19,
+  "portsweep": 20, "processtable": 21, "ps": 22, "rootkit": 23, "saint": 24,
+  "satan": 25, "sendmail": 26, "smurf": 27, "snmpgetattack": 28, "snmpguess": 29,
+  "spy": 30, "sqlattack": 31, "teardrop": 32, "udpstorm": 33, "warezclient": 34,
+  "warezmaster": 35, "worm": 36, "xlock": 37, "xsnoop": 38, "xterm": 39
+}

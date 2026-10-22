@@ -1,0 +1,28 @@
+{
+  "simulator": "Icarus Verilog version 0.10.0 (devel) (s20130827)",
+  "vectors": 22156,
+  "timestamp_utc": "2026-10-15T09:37:10.183130+00:00",
+  "synthesis_run": false,
+  "tests": {
+    "feature_blocks": {
+      "passed": true,
+      "pass_token": "FEATURE_BLOCKS_PASS",
+      "output": "FEATURE_BLOCKS_PASS"
+    },
+    "tree_engine": {
+      "passed": true,
+      "pass_token": "TREE_ENGINE_PASS",
+      "output": "TREE_ENGINE_PASS vectors=22156 max_steps=20"
+    },
+    "feature_to_tree_top": {
+      "passed": true,
+      "pass_token": "IDS_TOP_PASS",
+      "output": "IDS_TOP_PASS vectors=22156"
+    },
+    "packet_to_tree_top": {
+      "passed": true,
+      "pass_token": "PACKET_TOP_PASS",
+      "output": "PACKET_TOP_PASS class=18 leaf=1087"
+    }
+  }
+}

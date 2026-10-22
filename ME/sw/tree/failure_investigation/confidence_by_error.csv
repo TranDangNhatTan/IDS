@@ -1,0 +1,9 @@
+model,outcome,count,mean_max_class_probability,median,p10,p90
+decision_tree_multiclass,correct_type,16302,0.9999997518889882,1.0,1.0,1.0
+decision_tree_multiclass,false_alarm,331,1.0,1.0,1.0,1.0
+decision_tree_multiclass,missed_attack,4150,1.0,1.0,1.0,1.0
+decision_tree_multiclass,wrong_attack_type,1761,0.999667001672352,1.0,1.0,1.0
+random_forest_multiclass,correct_type,16190,0.7992850021927017,0.853454053933207,0.5685473566785284,0.9621598119137409
+random_forest_multiclass,false_alarm,301,0.7122909661636031,0.8011561716644944,0.314189964439312,0.9260271976773783
+random_forest_multiclass,missed_attack,4805,0.4557584743546098,0.4593197668925766,0.3135614299644821,0.5917203486821175
+random_forest_multiclass,wrong_attack_type,1248,0.471932317224684,0.3518309260245383,0.22868549290177104,0.950773340861209

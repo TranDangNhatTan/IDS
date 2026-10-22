@@ -1,0 +1,42 @@
+raw_feature,group,source,observed_min,observed_max,used_by_tree,representation,bit_width,scale,saturate_at,notes
+duration,basic,L2/L3/L4 parser + per-flow counters,0,57715,True,UINT16 saturating integer,16,1,56084,Values above saturation are equivalent for this trained tree.
+protocol_type,basic,L2/L3/L4 parser + per-flow counters,,,True,UINT2 category code; 0=unknown,2,1,3,See fpga_category_codes.csv; unknown behaves as all-zero one-hot.
+service,basic,L2/L3/L4 parser + per-flow counters,,,True,UINT7 category code; 0=unknown,7,1,69,See fpga_category_codes.csv; unknown behaves as all-zero one-hot.
+flag,basic,L2/L3/L4 parser + per-flow counters,,,True,UINT4 category code; 0=unknown,4,1,11,See fpga_category_codes.csv; unknown behaves as all-zero one-hot.
+src_bytes,basic,L2/L3/L4 parser + per-flow counters,0,1379963888,True,UINT22 saturating integer,22,1,2568031,Values above saturation are equivalent for this trained tree.
+dst_bytes,basic,L2/L3/L4 parser + per-flow counters,0,1309937401,True,UINT19 saturating integer,19,1,497508,Values above saturation are equivalent for this trained tree.
+land,basic,L2/L3/L4 parser + per-flow counters,0,1,True,UINT1 saturating integer,1,1,1,Values above saturation are equivalent for this trained tree.
+wrong_fragment,basic,L2/L3/L4 parser + per-flow counters,0,3,True,UINT2 saturating integer,2,1,3,Values above saturation are equivalent for this trained tree.
+urgent,basic,L2/L3/L4 parser + per-flow counters,0,3,True,UINT2 saturating integer,2,1,2,Values above saturation are equivalent for this trained tree.
+hot,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,101,True,UINT4 saturating integer,4,1,15,Values above saturation are equivalent for this trained tree.
+num_failed_logins,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,5,True,UINT1 saturating integer,1,1,1,Values above saturation are equivalent for this trained tree.
+logged_in,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,1,True,UINT1 saturating integer,1,1,1,Values above saturation are equivalent for this trained tree.
+num_compromised,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,7479,True,UINT7 saturating integer,7,1,86,Values above saturation are equivalent for this trained tree.
+root_shell,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,1,True,UINT1 saturating integer,1,1,1,Values above saturation are equivalent for this trained tree.
+su_attempted,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,2,True,UINT1 saturating integer,1,1,1,Values above saturation are equivalent for this trained tree.
+num_root,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,7468,True,UINT3 saturating integer,3,1,7,Values above saturation are equivalent for this trained tree.
+num_file_creations,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,100,True,UINT2 saturating integer,2,1,3,Values above saturation are equivalent for this trained tree.
+num_shells,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,5,True,UINT3 saturating integer,3,1,4,Values above saturation are equivalent for this trained tree.
+num_access_files,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,9,True,UINT1 saturating integer,1,1,1,Values above saturation are equivalent for this trained tree.
+num_outbound_cmds,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,0,False,not needed by current tree,0,1,not exported,num_outbound_cmds is unused by every decision node.
+is_host_login,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,1,True,UINT1 saturating integer,1,1,1,Values above saturation are equivalent for this trained tree.
+is_guest_login,content,Payload/L7 parser or host telemetry; unavailable from headers alone,0,1,True,UINT1 saturating integer,1,1,1,Values above saturation are equivalent for this trained tree.
+count,time_window,Time-window flow table,0,511,True,UINT9 saturating integer,9,1,511,Values above saturation are equivalent for this trained tree.
+srv_count,time_window,Time-window flow table,0,511,True,UINT5 saturating integer,5,1,21,Values above saturation are equivalent for this trained tree.
+serror_rate,time_window,Time-window flow table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+srv_serror_rate,time_window,Time-window flow table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+rerror_rate,time_window,Time-window flow table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+srv_rerror_rate,time_window,Time-window flow table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+same_srv_rate,time_window,Time-window flow table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+diff_srv_rate,time_window,Time-window flow table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+srv_diff_host_rate,time_window,Time-window flow table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+dst_host_count,host_window,Destination-host history table,0,255,True,UINT8 saturating integer,8,1,255,Values above saturation are equivalent for this trained tree.
+dst_host_srv_count,host_window,Destination-host history table,0,255,True,UINT8 saturating integer,8,1,255,Values above saturation are equivalent for this trained tree.
+dst_host_same_srv_rate,host_window,Destination-host history table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+dst_host_diff_srv_rate,host_window,Destination-host history table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+dst_host_same_src_port_rate,host_window,Destination-host history table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+dst_host_srv_diff_host_rate,host_window,Destination-host history table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+dst_host_serror_rate,host_window,Destination-host history table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+dst_host_srv_serror_rate,host_window,Destination-host history table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+dst_host_rerror_rate,host_window,Destination-host history table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"
+dst_host_srv_rerror_rate,host_window,Destination-host history table,0.0,1.0,True,UINT16 normalized rate Q0.16,16,65535,1.0,"code = round(clamp(rate,0,1) * 65535)"

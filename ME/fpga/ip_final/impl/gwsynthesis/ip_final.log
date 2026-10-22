@@ -1,0 +1,72 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\reset_sync.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rtl8211f_mdio_init.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rmii_deserializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rmii_serializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\async_packet_fifo.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rgmii_100_deserializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rgmii_100_serializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\uart_tx_byte.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\uart_debug_reporter.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\top_acg525_rgmii_rmii_bridge.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_node_decoder.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_feature_regfile.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_rate_quantizer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_feature_quantizer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_feature_ingest.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_packet_parser.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_history_window_bram.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\uart_rx_byte.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\model_update_uart.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_tree_rom_banked.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_tree_engine_live.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_top_live.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_history_pipeline_resource.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_packet_top_resource.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_uart_telemetry.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\top_acg525_inline_ids.v'
+Compiling module 'top_acg525_inline_ids'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\top_acg525_inline_ids.v":4)
+Compiling module 'top_acg525_rgmii_rmii_bridge'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\top_acg525_rgmii_rmii_bridge.v":3)
+Compiling module 'reset_sync'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\reset_sync.v":3)
+Compiling module 'rtl8211f_mdio_init'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rtl8211f_mdio_init.v":3)
+Compiling module 'uart_debug_reporter'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\uart_debug_reporter.v":4)
+Compiling module 'uart_tx_byte'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\uart_tx_byte.v":4)
+Compiling module 'rgmii_100_deserializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rgmii_100_deserializer.v":3)
+Compiling module 'async_packet_fifo'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\async_packet_fifo.v":3)
+Extracting RAM for identifier 'memory'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\async_packet_fifo.v":26)
+Compiling module 'rmii_serializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rmii_serializer.v":3)
+Compiling module 'rmii_deserializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rmii_deserializer.v":3)
+Compiling module 'rgmii_100_serializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\rgmii_100_serializer.v":3)
+Compiling module 'uart_rx_byte'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\uart_rx_byte.v":3)
+Compiling module 'model_update_uart'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\model_update_uart.v":7)
+Compiling module 'ids_packet_top_resource'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_packet_top_resource.v":1)
+Compiling module 'ids_packet_parser'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_packet_parser.v":3)
+Compiling module 'ids_flow_table_resource'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":4)
+Extracting RAM for identifier 'src_ip_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":19)
+Extracting RAM for identifier 'dst_ip_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":19)
+Extracting RAM for identifier 'src_port_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":20)
+Extracting RAM for identifier 'dst_port_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":20)
+Extracting RAM for identifier 'protocol_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":21)
+Extracting RAM for identifier 'protocol_code_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":21)
+Extracting RAM for identifier 'service_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":22)
+Extracting RAM for identifier 'flag_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":22)
+Extracting RAM for identifier 'start_time_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":23)
+Extracting RAM for identifier 'last_time_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":23)
+Extracting RAM for identifier 'src_bytes_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":24)
+Extracting RAM for identifier 'dst_bytes_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":24)
+Extracting RAM for identifier 'fragment_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":25)
+Extracting RAM for identifier 'urgent_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_flow_table_resource.v":25)
+Compiling module 'ids_history_pipeline_resource'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_history_pipeline_resource.v":3)
+Compiling module 'ids_history_window_bram'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_history_window_bram.v":4)
+Extracting RAM for identifier 'history_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_history_window_bram.v":18)
+Compiling module 'ids_top_live'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_top_live.v":1)
+Compiling module 'ids_feature_ingest'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_feature_ingest.v":1)
+Compiling module 'ids_feature_quantizer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_feature_quantizer.v":1)
+Compiling module 'ids_tree_engine_live'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_tree_engine_live.v":2)
+Compiling module 'ids_tree_rom_banked'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_tree_rom_banked.v":5)
+Compiling module 'ids_node_decoder'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_node_decoder.v":1)
+Compiling module 'ids_feature_regfile'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_feature_regfile.v":1)
+Compiling module 'ids_uart_telemetry'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_uart_telemetry.v":3)
+NOTE  (EX0101) : Current top module is "top_acg525_inline_ids"

@@ -1,0 +1,61 @@
+{
+ "Device" : "GW5A-25B",
+ "Files" : [
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_ingest.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_quantizer.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_regfile.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_node_decoder.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/rmii_deserializer.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/rmii_serializer.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_top_live.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_tree_engine_live.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_tree_rom_banked.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_udp_feature_rx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_udp_reply_tx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/top_acg525_ids_core.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

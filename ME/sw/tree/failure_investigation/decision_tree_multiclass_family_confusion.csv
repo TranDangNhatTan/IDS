@@ -1,0 +1,6 @@
+actual_family,normal,DoS,Probe,R2L,U2R
+normal,9380,90,232,5,4
+DoS,1101,5988,352,19,0
+Probe,520,256,1610,35,0
+R2L,2480,0,119,282,4
+U2R,49,0,0,6,12

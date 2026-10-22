@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW5A-25B" package="UBGA324" speed="2" partNumber="GW5A-LV25UG324C2/I1"/>
+    <FileList>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\reset_sync.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rtl8211f_mdio_init.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rmii_deserializer.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rmii_serializer.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\async_packet_fifo.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rgmii_100_deserializer.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rgmii_100_serializer.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\uart_tx_byte.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\uart_debug_reporter.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\top_acg525_rgmii_rmii_bridge.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_node_decoder.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_feature_regfile.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_rate_quantizer.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_feature_quantizer.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_feature_ingest.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_packet_parser.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_history_window_bram.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\uart_rx_byte.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\model_update_uart.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_tree_rom_banked.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_tree_engine_live.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_top_live.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_history_pipeline_resource.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_packet_top_resource.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_uart_telemetry.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\top_acg525_inline_ids.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="global_freq" value="100.000"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\impl\gwsynthesis\ip_final_demo.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="0"/>
+        <Option type="top_module" value="top_acg525_inline_ids"/>
+        <Option type="vcc" value="0.9"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>

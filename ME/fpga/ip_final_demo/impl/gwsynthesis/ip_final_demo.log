@@ -1,0 +1,90 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\reset_sync.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rtl8211f_mdio_init.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rmii_deserializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rmii_serializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\async_packet_fifo.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rgmii_100_deserializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rgmii_100_serializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\uart_tx_byte.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\uart_debug_reporter.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\top_acg525_rgmii_rmii_bridge.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_node_decoder.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_feature_regfile.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_rate_quantizer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_feature_quantizer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_feature_ingest.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_packet_parser.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_history_window_bram.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\uart_rx_byte.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\model_update_uart.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_tree_rom_banked.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_tree_engine_live.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_top_live.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_history_pipeline_resource.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_packet_top_resource.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_uart_telemetry.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\top_acg525_inline_ids.v'
+Compiling module 'top_acg525_inline_ids'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\top_acg525_inline_ids.v":4)
+Compiling module 'top_acg525_rgmii_rmii_bridge'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\top_acg525_rgmii_rmii_bridge.v":3)
+Compiling module 'reset_sync'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\reset_sync.v":3)
+Compiling module 'rtl8211f_mdio_init'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rtl8211f_mdio_init.v":3)
+Compiling module 'uart_debug_reporter'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\uart_debug_reporter.v":4)
+Compiling module 'uart_tx_byte'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\uart_tx_byte.v":4)
+Compiling module 'rgmii_100_deserializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rgmii_100_deserializer.v":3)
+Compiling module 'async_packet_fifo'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\async_packet_fifo.v":3)
+Extracting RAM for identifier 'memory'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\async_packet_fifo.v":26)
+Compiling module 'rmii_serializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rmii_serializer.v":3)
+Compiling module 'rmii_deserializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rmii_deserializer.v":3)
+Compiling module 'rgmii_100_serializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\rgmii_100_serializer.v":3)
+Compiling module 'uart_rx_byte'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\uart_rx_byte.v":3)
+Compiling module 'model_update_uart'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\model_update_uart.v":7)
+Compiling module 'ids_packet_top_resource'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_packet_top_resource.v":1)
+Compiling module 'ids_packet_parser'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_packet_parser.v":3)
+Compiling module 'ids_flow_table_resource'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":4)
+Extracting RAM for identifier 'src_ip_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":19)
+Extracting RAM for identifier 'dst_ip_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":19)
+Extracting RAM for identifier 'src_port_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":20)
+Extracting RAM for identifier 'dst_port_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":20)
+Extracting RAM for identifier 'protocol_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":21)
+Extracting RAM for identifier 'protocol_code_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":21)
+Extracting RAM for identifier 'service_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":22)
+Extracting RAM for identifier 'flag_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":22)
+Extracting RAM for identifier 'start_time_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":23)
+Extracting RAM for identifier 'last_time_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":23)
+Extracting RAM for identifier 'src_bytes_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":24)
+Extracting RAM for identifier 'dst_bytes_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":24)
+Extracting RAM for identifier 'fragment_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":25)
+Extracting RAM for identifier 'urgent_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_flow_table_resource.v":25)
+Compiling module 'ids_history_pipeline_resource'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_history_pipeline_resource.v":3)
+Compiling module 'ids_history_window_bram'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_history_window_bram.v":4)
+Extracting RAM for identifier 'history_mem'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_history_window_bram.v":18)
+Compiling module 'ids_top_live'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_top_live.v":1)
+Compiling module 'ids_feature_ingest'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_feature_ingest.v":1)
+Compiling module 'ids_feature_quantizer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_feature_quantizer.v":1)
+Compiling module 'ids_tree_engine_live'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_tree_engine_live.v":2)
+Compiling module 'ids_tree_rom_banked'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_tree_rom_banked.v":5)
+Compiling module 'ids_node_decoder'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_node_decoder.v":1)
+Compiling module 'ids_feature_regfile'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\deps\ids_feature_regfile.v":1)
+Compiling module 'ids_uart_telemetry'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_demo\src\ids_uart_telemetry.v":3)
+NOTE  (EX0101) : Current top module is "top_acg525_inline_ids"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+ERROR (RP0006) : The number(339085(331361 LUTs, 4904 ALUs, 0 ROM16s, 470 SSRAMs)) of logic in the design exceeds the resource limit(23040) of current device
+GowinSynthesis finish

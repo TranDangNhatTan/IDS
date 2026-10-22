@@ -1,0 +1,14 @@
+Selection rule: Maximize validation balanced_accuracy = (attack recall + 1 - FPR) / 2; break exact ties by smaller max_depth. Fixed before accessing test data.
+Python executable: D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\.venv\Scripts\python.exe; virtual environment: True
+Train: {'total': 100778, 'normal': 53874, 'attack': 46904}; validation: {'total': 25195, 'normal': 13469, 'attack': 11726}
+max_depth= 1 | train F1=0.916340 | val F1=0.915134 | recall=0.912246 | FPR=0.070904 | balanced_accuracy=0.920671
+max_depth= 2 | train F1=0.953281 | val F1=0.950199 | recall=0.935613 | FPR=0.029327 | balanced_accuracy=0.953143
+max_depth= 3 | train F1=0.973450 | val F1=0.971233 | recall=0.980385 | FPR=0.033484 | balanced_accuracy=0.973451
+max_depth= 4 | train F1=0.984211 | val F1=0.983928 | recall=0.976292 | FPR=0.007127 | balanced_accuracy=0.984582
+max_depth= 6 | train F1=0.992601 | val F1=0.993018 | recall=0.994627 | FPR=0.007499 | balanced_accuracy=0.993564
+max_depth= 8 | train F1=0.995564 | val F1=0.995436 | recall=0.995054 | FPR=0.003638 | balanced_accuracy=0.995708
+max_depth=12 | train F1=0.998326 | val F1=0.998209 | recall=0.998294 | FPR=0.001633 | balanced_accuracy=0.998331
+Selected max_depth=12 using validation only. Refitting all 125973 training records.
+Evaluating the fixed final model on KDDTest+.txt once.
+Final test metrics: {"precision_attack": 0.9674777725783809, "recall_attack": 0.6444323229174784, "f1_attack": 0.7735840231981665, "false_positive_rate": 0.02862732983214911, "accuracy": 0.785264371894961, "balanced_accuracy": 0.8079024965426647, "tn": 9433, "fp": 278, "fn": 4563, "tp": 8270}
+Artifacts saved to: D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\artifacts\decision_tree

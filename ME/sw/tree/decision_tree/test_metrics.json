@@ -1,0 +1,28 @@
+{
+  "precision_attack": 0.9674777725783809,
+  "recall_attack": 0.6444323229174784,
+  "f1_attack": 0.7735840231981665,
+  "false_positive_rate": 0.02862732983214911,
+  "accuracy": 0.785264371894961,
+  "balanced_accuracy": 0.8079024965426647,
+  "tn": 9433,
+  "fp": 278,
+  "fn": 4563,
+  "tp": 8270,
+  "confusion_matrix": [
+    [
+      9433,
+      278
+    ],
+    [
+      4563,
+      8270
+    ]
+  ],
+  "confusion_matrix_order": [
+    "normal",
+    "attack"
+  ],
+  "rows": "actual",
+  "columns": "predicted"
+}

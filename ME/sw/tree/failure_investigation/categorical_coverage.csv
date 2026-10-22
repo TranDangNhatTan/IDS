@@ -1,0 +1,4 @@
+feature,train_unique,test_unique,test_only_values,affected_test_rows
+protocol_type,3,3,,0
+service,70,64,,0
+flag,11,11,,0

@@ -1,0 +1,10 @@
+random_forest multiclass; executable=D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\.venv\Scripts\python.exe; venv=True
+Highest validation macro-F1 across all training classes; exact ties prefer shallower depth. Test is an already-viewed benchmark, not an untouched holdout.
+train=100778, validation=25195, classes=23; every class present in both partitions
+depth=12: train macro-F1=0.929715; validation macro-F1=0.754612; weighted-F1=0.988305; fit=8.10s
+depth=20: train macro-F1=0.996161; validation macro-F1=0.693537; weighted-F1=0.997758; fit=9.09s
+depth=unlimited: train macro-F1=0.997118; validation macro-F1=0.684578; weighted-F1=0.997682; fit=9.19s
+Selected depth=12; fitting all KDDTrain+ records
+One evaluation of this selected model on the previously viewed KDDTest+ benchmark
+Test exact-type accuracy=0.718151; macro-F1=0.255327; weighted-F1=0.623598
+Errors: {'correct_type': 16190, 'missed_attack': 4805, 'wrong_attack_type': 1248, 'false_alarm': 301}; saved to D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\artifacts\random_forest_multiclass

@@ -1,0 +1,43 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\reset_sync.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rtl8211f_mdio_init.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rmii_deserializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rmii_serializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\async_packet_fifo.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rgmii_100_deserializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rgmii_100_serializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\uart_tx_byte.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\uart_debug_reporter.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\top_acg525_rgmii_rmii_bridge.v'
+Compiling module 'top_acg525_rgmii_rmii_bridge'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\top_acg525_rgmii_rmii_bridge.v":3)
+Compiling module 'reset_sync'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\reset_sync.v":3)
+Compiling module 'rtl8211f_mdio_init'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rtl8211f_mdio_init.v":3)
+Compiling module 'uart_debug_reporter'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\uart_debug_reporter.v":4)
+Compiling module 'uart_tx_byte'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\uart_tx_byte.v":4)
+Compiling module 'rgmii_100_deserializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rgmii_100_deserializer.v":3)
+Compiling module 'async_packet_fifo'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\async_packet_fifo.v":3)
+Extracting RAM for identifier 'memory'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\async_packet_fifo.v":26)
+Compiling module 'rmii_serializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rmii_serializer.v":3)
+Compiling module 'rmii_deserializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rmii_deserializer.v":3)
+Compiling module 'rgmii_100_serializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\src\rgmii_100_serializer.v":3)
+NOTE  (EX0101) : Current top module is "top_acg525_rgmii_rmii_bridge"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\impl\gwsynthesis\demo_connect_uart_debug.vg" completed
+[100%] Generate report file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\demo_connect\impl\gwsynthesis\demo_connect_uart_debug_syn.rpt.html" completed
+GowinSynthesis finish

@@ -1,0 +1,30 @@
+{
+  "fit_performed": false,
+  "threshold_changed": false,
+  "models": [
+    "decision_tree_multiclass",
+    "random_forest_multiclass"
+  ],
+  "train_class_count": 23,
+  "test_class_count": 38,
+  "test_only_classes": [
+    "apache2",
+    "httptunnel",
+    "mailbomb",
+    "mscan",
+    "named",
+    "processtable",
+    "ps",
+    "saint",
+    "sendmail",
+    "snmpgetattack",
+    "snmpguess",
+    "sqlattack",
+    "udpstorm",
+    "worm",
+    "xlock",
+    "xsnoop",
+    "xterm"
+  ],
+  "test_only_sample_count": 3750
+}

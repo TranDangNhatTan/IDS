@@ -1,0 +1,30 @@
+{
+  "rule": "Maximize validation balanced_accuracy = (attack recall + 1 - FPR) / 2; break exact ties by smaller max_depth. Fixed before accessing test data.",
+  "selected_max_depth": 12,
+  "validation_result": {
+    "max_depth": 12,
+    "fit_seconds": 1.4934883000096306,
+    "train_precision_attack": 0.998379496364528,
+    "train_recall_attack": 0.9982730683950196,
+    "train_f1_attack": 0.9983262795432982,
+    "train_false_positive_rate": 0.0014106990384972343,
+    "train_accuracy": 0.9984421203040346,
+    "train_balanced_accuracy": 0.9984311846782612,
+    "train_tn": 53798,
+    "train_fp": 76,
+    "train_fn": 81,
+    "train_tp": 46823,
+    "validation_precision_attack": 0.9981241473396999,
+    "validation_recall_attack": 0.998294388538291,
+    "validation_f1_attack": 0.998209260680481,
+    "validation_false_positive_rate": 0.0016333803548890043,
+    "validation_accuracy": 0.998333002579877,
+    "validation_balanced_accuracy": 0.998330504091701,
+    "validation_tn": 13447,
+    "validation_fp": 22,
+    "validation_fn": 20,
+    "validation_tp": 11706,
+    "node_count": 257,
+    "leaf_count": 129
+  }
+}

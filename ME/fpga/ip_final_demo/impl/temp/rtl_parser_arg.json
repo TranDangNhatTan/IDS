@@ -1,0 +1,121 @@
+{
+ "Device" : "GW5A-25B",
+ "Files" : [
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/reset_sync.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/rtl8211f_mdio_init.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/rmii_deserializer.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/rmii_serializer.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/async_packet_fifo.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/rgmii_100_deserializer.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/rgmii_100_serializer.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/uart_tx_byte.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/uart_debug_reporter.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/top_acg525_rgmii_rmii_bridge.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/ids_node_decoder.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/ids_feature_regfile.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/ids_rate_quantizer.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/ids_feature_quantizer.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/ids_feature_ingest.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/ids_packet_parser.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/deps/ids_history_window_bram.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/uart_rx_byte.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/model_update_uart.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/ids_tree_rom_banked.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/ids_tree_engine_live.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/ids_top_live.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/ids_flow_table_resource.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/ids_history_pipeline_resource.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/ids_packet_top_resource.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/ids_uart_telemetry.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/src/top_acg525_inline_ids.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_demo/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

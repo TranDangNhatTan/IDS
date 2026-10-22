@@ -1,0 +1,81 @@
+{
+  "completed_at_utc": "2026-10-07T20:08:58.884470+00:00",
+  "python_executable": "D:\\TranDangNhatTan_24IC054_VKU\\Junior\\FPGA_MCU_IDS\\.venv\\Scripts\\python.exe",
+  "virtual_environment": true,
+  "seed": 42,
+  "validation_fraction": 0.2,
+  "stratified": true,
+  "candidate_depths": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    12
+  ],
+  "selection_rule": "Maximize validation balanced_accuracy = (attack recall + 1 - FPR) / 2; break exact ties by smaller max_depth. Fixed before accessing test data.",
+  "selected_max_depth": 12,
+  "data_counts": {
+    "train": {
+      "total": 100778,
+      "normal": 53874,
+      "attack": 46904
+    },
+    "validation": {
+      "total": 25195,
+      "normal": 13469,
+      "attack": 11726
+    },
+    "full_train": {
+      "total": 125973,
+      "normal": 67343,
+      "attack": 58630
+    },
+    "test": {
+      "total": 22544,
+      "normal": 9711,
+      "attack": 12833
+    }
+  },
+  "sha256": {
+    "KDDTrain+.txt": "44e12a6362806809fd33a7cfc486696379f5719c569dc929485a1fa68eae10e2",
+    "KDDTest+.txt": "95e6a286c720e7b5c27f56131918124e9278c4b410e9ee7c4f11e0439ffddaab"
+  },
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.7",
+    "joblib": "1.5.2"
+  },
+  "final_model": {
+    "actual_depth": 12,
+    "node_count": 281,
+    "leaf_count": 141,
+    "encoded_feature_count": 122,
+    "parameters": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 12,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    }
+  },
+  "checks": {
+    "split_disjoint": true,
+    "encoder_fitted_on_train_only_during_selection": true,
+    "serialization_prediction_parity": true,
+    "unseen_categories_supported": true,
+    "input_schema_41_features": true
+  }
+}

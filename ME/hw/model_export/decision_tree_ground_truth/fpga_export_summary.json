@@ -1,0 +1,25 @@
+{
+  "raw_input_features": 41,
+  "encoded_sklearn_features": 121,
+  "features_used_by_tree": 40,
+  "tree_nodes": 2301,
+  "leaf_nodes": 1151,
+  "rate_scale": 65535,
+  "parity_checked_rows": 147674,
+  "fixed_point_tree_matches_sklearn": true,
+  "header_or_flow_only_features_used": 28,
+  "content_features_used": [
+    "hot",
+    "num_failed_logins",
+    "logged_in",
+    "num_compromised",
+    "root_shell",
+    "su_attempted",
+    "num_root",
+    "num_file_creations",
+    "num_shells",
+    "num_access_files",
+    "is_host_login",
+    "is_guest_login"
+  ]
+}

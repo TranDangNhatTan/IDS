@@ -1,0 +1,44 @@
+{
+  "model": "DecisionTreeClassifier",
+  "profile": "fpga_flow28",
+  "profile_sha256": "45154c3adb32fc62ae16b77dffd69ebce75f6ef8ed56437bbe8891000b9f24ad",
+  "backend": {
+    "requested": "cpu",
+    "used": "sklearn-cpu",
+    "cuda_available": false,
+    "reason": "explicit CPU backend"
+  },
+  "seed": 42,
+  "selected": {
+    "max_depth": 20,
+    "min_samples_leaf": 1,
+    "node_count": 1145,
+    "leaf_count": 573,
+    "validation_accuracy": 0.948853376670278,
+    "validation_macro_f1": 0.6516120121047625,
+    "validation_attack_recall": 0.9972698173601958,
+    "validation_false_positive_rate": 0.06851691240242845,
+    "validation_tn": 10740,
+    "validation_fp": 790,
+    "validation_fn": 29,
+    "validation_tp": 10593
+  },
+  "actual_depth": 20,
+  "node_count": 1273,
+  "leaf_count": 637,
+  "test_metrics": {
+    "accuracy": 0.9547752301859541,
+    "macro_f1": 0.6606843965680685,
+    "attack_recall": 0.9969885187276492,
+    "false_positive_rate": 0.06296617519514311,
+    "tn": 10804,
+    "fp": 726,
+    "fn": 32,
+    "tp": 10594
+  },
+  "sklearn": "1.7.2",
+  "python": "3.11.9",
+  "ground_truth_rows": 147674,
+  "feature_count": 28,
+  "class_count": 40
+}

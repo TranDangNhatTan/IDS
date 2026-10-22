@@ -1,0 +1,78 @@
+// ACG525 GW5A-25B physical constraints.
+// Board voltage rails: bank 0/1 = 1.5 V, bank 2 = 3.3 V,
+// bank 6/7 (onboard RTL8211F RGMII) = 2.5 V.
+
+// 50 MHz oscillator and KEY0 (active-low manual reset).
+IO_LOC "sys_clk_50" T9;
+IO_PORT "sys_clk_50" PULL_MODE=NONE IO_TYPE=LVCMOS33;
+IO_LOC "ext_rst_n" B16;
+IO_PORT "ext_rst_n" PULL_MODE=UP IO_TYPE=LVCMOS15;
+
+// External LAN8720 RMII on P6, bank 2 at 3.3 V.
+IO_LOC "lan_rxd[0]" C17;
+IO_PORT "lan_rxd[0]" PULL_MODE=NONE IO_TYPE=LVCMOS33;
+IO_LOC "lan_rxd[1]" C18;
+IO_PORT "lan_rxd[1]" PULL_MODE=NONE IO_TYPE=LVCMOS33;
+IO_LOC "lan_crs_dv" F14;
+IO_PORT "lan_crs_dv" PULL_MODE=NONE IO_TYPE=LVCMOS33;
+IO_LOC "lan_txd[0]" G14;
+IO_PORT "lan_txd[0]" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS33;
+IO_LOC "lan_txd[1]" D17;
+IO_PORT "lan_txd[1]" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS33;
+IO_LOC "lan_tx_en" D18;
+IO_PORT "lan_tx_en" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS33;
+
+// GPIO12 is P6 physical pin 15 (not pin 13). K15 is GCLKT_5.
+IO_LOC "lan_rmii_ref_clk" K15;
+IO_PORT "lan_rmii_ref_clk" PULL_MODE=NONE IO_TYPE=LVCMOS33;
+
+// Onboard RTL8211F RGMII, banks 6/7 at 2.5 V.
+// Old name rgmii_txen maps to eth_rgmii_tx_ctl.
+IO_LOC "eth_rgmii_tx_ctl" C2;
+IO_PORT "eth_rgmii_tx_ctl" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_txd[3]" F1;
+IO_PORT "eth_rgmii_txd[3]" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_txd[2]" F2;
+IO_PORT "eth_rgmii_txd[2]" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_txd[1]" D1;
+IO_PORT "eth_rgmii_txd[1]" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_txd[0]" D2;
+IO_PORT "eth_rgmii_txd[0]" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_tx_clk" C1;
+IO_PORT "eth_rgmii_tx_clk" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS25;
+
+IO_LOC "eth_rst_n" G6;
+IO_PORT "eth_rst_n" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS25;
+
+// Old name rgmii_rxdv maps to eth_rgmii_rx_ctl.
+IO_LOC "eth_rgmii_rx_ctl" E1;
+IO_PORT "eth_rgmii_rx_ctl" PULL_MODE=NONE IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_rxd[3]" F5;
+IO_PORT "eth_rgmii_rxd[3]" PULL_MODE=NONE IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_rxd[2]" F6;
+IO_PORT "eth_rgmii_rxd[2]" PULL_MODE=NONE IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_rxd[1]" G1;
+IO_PORT "eth_rgmii_rxd[1]" PULL_MODE=NONE IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_rxd[0]" G3;
+IO_PORT "eth_rgmii_rxd[0]" PULL_MODE=NONE IO_TYPE=LVCMOS25;
+IO_LOC "eth_rgmii_rx_clk" L5;
+IO_PORT "eth_rgmii_rx_clk" PULL_MODE=NONE IO_TYPE=LVCMOS25;
+
+IO_LOC "eth_mdc" D3;
+IO_PORT "eth_mdc" PULL_MODE=NONE DRIVE=8 IO_TYPE=LVCMOS25;
+IO_LOC "eth_mdio" E4;
+IO_PORT "eth_mdio" PULL_MODE=UP DRIVE=8 IO_TYPE=LVCMOS25;
+
+// Onboard USB-UART transmitter, 115200 baud, 8-N-1.
+IO_LOC "uart_tx" V8;
+IO_PORT "uart_tx" PULL_MODE=UP DRIVE=8 IO_TYPE=LVCMOS33;
+
+// Onboard LEDs are transistor-driven from 1.5 V bank 1.
+IO_LOC "led[0]" D14;
+IO_PORT "led[0]" PULL_MODE=NONE DRIVE=4 IO_TYPE=LVCMOS15;
+IO_LOC "led[1]" C14;
+IO_PORT "led[1]" PULL_MODE=NONE DRIVE=4 IO_TYPE=LVCMOS15;
+IO_LOC "led[2]" B9;
+IO_PORT "led[2]" PULL_MODE=NONE DRIVE=4 IO_TYPE=LVCMOS15;
+IO_LOC "led[3]" A9;
+IO_PORT "led[3]" PULL_MODE=NONE DRIVE=4 IO_TYPE=LVCMOS15;

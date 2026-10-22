@@ -1,0 +1,44 @@
+{
+  "model": "DecisionTreeClassifier",
+  "profile": "full41",
+  "profile_sha256": "4032398ed42a036ac87b9acbf8887c94f684aa700c7625895ada48582ff87d8e",
+  "backend": {
+    "requested": "auto",
+    "used": "sklearn-cpu",
+    "cuda_available": false,
+    "reason": "cuML is not installed; sklearn DecisionTreeClassifier is CPU-only"
+  },
+  "seed": 42,
+  "selected": {
+    "max_depth": "unlimited",
+    "min_samples_leaf": 1,
+    "node_count": 1955,
+    "leaf_count": 978,
+    "validation_accuracy": 0.9930028891296497,
+    "validation_macro_f1": 0.6990066346577782,
+    "validation_attack_recall": 0.9937864808887216,
+    "validation_false_positive_rate": 0.004596704249783174,
+    "validation_tn": 11477,
+    "validation_fp": 53,
+    "validation_fn": 66,
+    "validation_tp": 10556
+  },
+  "actual_depth": 50,
+  "node_count": 2363,
+  "leaf_count": 1182,
+  "test_metrics": {
+    "accuracy": 0.9933652283805741,
+    "macro_f1": 0.6950340068949408,
+    "attack_recall": 0.9945416901938641,
+    "false_positive_rate": 0.004509973980919341,
+    "tn": 11478,
+    "fp": 52,
+    "fn": 58,
+    "tp": 10568
+  },
+  "sklearn": "1.7.2",
+  "python": "3.11.9",
+  "ground_truth_rows": 147674,
+  "feature_count": 41,
+  "class_count": 40
+}

@@ -1,0 +1,1 @@
+`define RTL_VECTOR_COUNT 22156

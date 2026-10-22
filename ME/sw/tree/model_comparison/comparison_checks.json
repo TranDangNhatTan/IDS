@@ -1,0 +1,12 @@
+{
+  "same_training_data": true,
+  "same_test_data": true,
+  "same_train_validation_split": true,
+  "same_target_classes": true,
+  "same_selection_metric": true,
+  "test_is_previously_viewed_benchmark": true,
+  "source_runs": {
+    "decision_tree": "D:\\TranDangNhatTan_24IC054_VKU\\Junior\\FPGA_MCU_IDS\\artifacts\\decision_tree_multiclass",
+    "random_forest": "D:\\TranDangNhatTan_24IC054_VKU\\Junior\\FPGA_MCU_IDS\\artifacts\\random_forest_multiclass"
+  }
+}

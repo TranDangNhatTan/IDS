@@ -1,0 +1,11 @@
+IO_LOC "sys_clk_50" T9; IO_PORT "sys_clk_50" IO_TYPE=LVCMOS33;
+// KEY1/D9 is active-low and provides a real board reset.  B16 is an ADC pin.
+IO_LOC "ext_rst_n" D9; IO_PORT "ext_rst_n" PULL_MODE=UP IO_TYPE=LVCMOS15;
+IO_LOC "lan_rxd[0]" C17; IO_LOC "lan_rxd[1]" C18; IO_LOC "lan_crs_dv" F14;
+IO_PORT "lan_rxd[0]" IO_TYPE=LVCMOS33; IO_PORT "lan_rxd[1]" IO_TYPE=LVCMOS33; IO_PORT "lan_crs_dv" IO_TYPE=LVCMOS33;
+IO_LOC "lan_txd[0]" G14; IO_LOC "lan_txd[1]" D17; IO_LOC "lan_tx_en" D18;
+IO_PORT "lan_txd[0]" IO_TYPE=LVCMOS33 DRIVE=8; IO_PORT "lan_txd[1]" IO_TYPE=LVCMOS33 DRIVE=8; IO_PORT "lan_tx_en" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_LOC "lan_rmii_ref_clk" K15; IO_PORT "lan_rmii_ref_clk" IO_TYPE=LVCMOS33;
+// DK_START/ACG525 user LEDs are active-high: LED1=A8, LED2=A7, LED3=B8, LED4=C8.
+IO_LOC "led[0]" A8; IO_LOC "led[1]" A7; IO_LOC "led[2]" B8; IO_LOC "led[3]" C8;
+IO_PORT "led[0]" IO_TYPE=LVCMOS15 DRIVE=4; IO_PORT "led[1]" IO_TYPE=LVCMOS15 DRIVE=4; IO_PORT "led[2]" IO_TYPE=LVCMOS15 DRIVE=4; IO_PORT "led[3]" IO_TYPE=LVCMOS15 DRIVE=4;

@@ -1,0 +1,15 @@
+features=41; rows=147674; classes=40; split train=103366, validation=22152, test=22156
+Classes absent from validation because of two-sample support: ['spy', 'sqlattack', 'udpstorm', 'worm']
+depth=12, min_leaf=1: val macro-F1=0.372005, attack recall=0.999059, FPR=0.219601, nodes=277
+depth=16, min_leaf=1: val macro-F1=0.591244, attack recall=0.998588, FPR=0.106418, nodes=597
+depth=20, min_leaf=1: val macro-F1=0.656886, attack recall=0.997458, FPR=0.074935, nodes=1063
+depth=24, min_leaf=1: val macro-F1=0.683045, attack recall=0.997552, FPR=0.057242, nodes=1463
+depth=unlimited, min_leaf=1: val macro-F1=0.716688, attack recall=0.995575, FPR=0.004337, nodes=1981
+depth=16, min_leaf=2: val macro-F1=0.607896, attack recall=0.998776, FPR=0.101474, nodes=557
+depth=20, min_leaf=2: val macro-F1=0.669382, attack recall=0.998117, FPR=0.074848, nodes=991
+depth=24, min_leaf=2: val macro-F1=0.665602, attack recall=0.997646, FPR=0.059150, nodes=1329
+depth=unlimited, min_leaf=2: val macro-F1=0.701388, attack recall=0.996799, FPR=0.007372, nodes=1719
+depth=20, min_leaf=4: val macro-F1=0.660102, attack recall=0.998023, FPR=0.076930, nodes=871
+depth=24, min_leaf=4: val macro-F1=0.658314, attack recall=0.997929, FPR=0.063053, nodes=1105
+depth=unlimited, min_leaf=4: val macro-F1=0.687763, attack recall=0.997364, FPR=0.013790, nodes=1341
+Selected depth=unlimited, min_leaf=1; test metrics={"accuracy": 0.9942679183968225, "macro_f1": 0.7123937319941873, "weighted_f1": 0.9942239384071406, "binary_precision_attack": 0.9963256076879593, "binary_recall_attack": 0.9952004517221908, "binary_f1_attack": 0.9957627118644068, "binary_false_positive_rate": 0.0033824804856895057, "binary_accuracy": 0.9959378949268821, "binary_balanced_accuracy": 0.9959089856182507, "binary_tn": 11491, "binary_fp": 39, "binary_fn": 51, "binary_tp": 10575}; errors={'correct_type': 22029, 'missed_attack': 51, 'false_alarm': 39, 'wrong_attack_type': 37}

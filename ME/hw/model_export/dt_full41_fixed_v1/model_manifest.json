@@ -1,0 +1,27 @@
+{
+  "profile": "full41",
+  "profile_sha256": "4032398ed42a036ac87b9acbf8887c94f684aa700c7625895ada48582ff87d8e",
+  "node_count": 2363,
+  "word_bits": 64,
+  "golden_vector_count": 22156,
+  "offline_model_sha256": "ca048dc97fe76260c7caec80888e20126053515f4ec45fa58f74c390cff0634f",
+  "integer_h5_sha256": "142557e5d6ff5686e3d1118c4866e902f0b26f7541e6e016f446936e494013c9",
+  "files": {
+    "class_map.csv": "ca39592f4fe1f18437008079652aea68d3cc52154c357462db0f85fa9adca0a3",
+    "fpga_category_codes.csv": "6c2b951c0d05ba191228871b1ab1850ec6970dce2ab2c79e2e2cc92c73ac9151",
+    "fpga_input_schema.csv": "5422a4914d8f72eeca89811664d3bb6bbbadc8f6dd40f315def2df2cb1dec514",
+    "fpga_tree_nodes.csv": "3af45b5f7e1fcd66be2cb85d5779c4e5306263ad9127714d038cdded14af7ba8",
+    "golden_paths.csv": "9dc53479efdfc3a0e2191a7b5ab1c1485149d463cf165cbcfde07bf5837ceaee",
+    "golden_vectors.csv": "8832f90c21f01504691486f38fe3c875d61594f1f0594e967b8d789f836b3997",
+    "node_rom.coe": "09d8a47e9222599866dcfe6914a7b658b0cd214777ea69568eb3618ce0bf2403",
+    "node_rom.hex": "bd525a8f4baa01d81d84a2c14d71d0a34c1ce7099523597821255e56307c1ae8",
+    "node_rom.mem": "275dd35c3d13ef9ac981760fe42cfa2439e2e791a0a224a6c1136c7f176ef2f7",
+    "node_rom.mif": "a551114f7fd18144bdd95ac75e9138d8e3a52b5a6c832b9a56795c54d2fa763b",
+    "node_words.csv": "376e97c2baa47c29db2fd4acef8f615b0e3f8204b23801f1118c71aa30386c92"
+  },
+  "parity": {
+    "model_equals_csv": true,
+    "model_equals_rom": true,
+    "rows_checked": 147674
+  }
+}

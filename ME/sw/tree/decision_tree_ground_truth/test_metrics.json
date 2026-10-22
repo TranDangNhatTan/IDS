@@ -1,0 +1,21 @@
+{
+  "accuracy": 0.9942679183968225,
+  "macro_f1": 0.7123937319941873,
+  "weighted_f1": 0.9942239384071406,
+  "binary_precision_attack": 0.9963256076879593,
+  "binary_recall_attack": 0.9952004517221908,
+  "binary_f1_attack": 0.9957627118644068,
+  "binary_false_positive_rate": 0.0033824804856895057,
+  "binary_accuracy": 0.9959378949268821,
+  "binary_balanced_accuracy": 0.9959089856182507,
+  "binary_tn": 11491,
+  "binary_fp": 39,
+  "binary_fn": 51,
+  "binary_tp": 10575,
+  "error_counts": {
+    "correct_type": 22029,
+    "missed_attack": 51,
+    "false_alarm": 39,
+    "wrong_attack_type": 37
+  }
+}

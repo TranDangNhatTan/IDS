@@ -1,0 +1,7 @@
+{
+  "profile": "fpga_flow28",
+  "candidate_max_depth": [12, 16, 20, 24],
+  "candidate_min_samples_leaf": [1, 2, 4, 8],
+  "macro_f1_tolerance": 0.005,
+  "random_seed": 42
+}

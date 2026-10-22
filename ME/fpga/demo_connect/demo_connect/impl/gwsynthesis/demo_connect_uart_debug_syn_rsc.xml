@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top_acg525_rgmii_rmii_bridge" Register="85" Alu="39" Lut="18" T_Register="535(85)" T_Alu="118(39)" T_Lut="580(18)" T_Bsram="4(0)" T_Ssram="12(0)">
+ <SubModule name="u_reset_sys" Register="2" T_Register="2(2)"/>
+ <SubModule name="u_reset_rmii" Register="2" T_Register="2(2)"/>
+ <SubModule name="u_reset_rgmii_rx" Register="2" T_Register="2(2)"/>
+ <SubModule name="u_mdio_init" Register="74" Alu="31" Lut="99" T_Register="74(74)" T_Alu="31(31)" T_Lut="99(99)"/>
+ <SubModule name="u_uart_debug_reporter" Register="60" Lut="117" T_Register="89(60)" T_Lut="164(117)">
+  <SubModule name="u_uart_tx_byte" Register="29" Lut="47" T_Register="29(29)" T_Lut="47(47)"/>
+ </SubModule>
+ <SubModule name="u_rgmii_rx" Register="26" Lut="8" T_Register="26(26)" T_Lut="8(8)"/>
+ <SubModule name="u_rgmii_to_rmii_fifo" Register="88" Alu="24" Lut="115" Bsram="2" Ssram="6" T_Register="88(88)" T_Alu="24(24)" T_Lut="115(115)" T_Bsram="2(2)" T_Ssram="6(6)"/>
+ <SubModule name="u_rmii_tx" Register="27" Lut="34" T_Register="27(27)" T_Lut="34(34)"/>
+ <SubModule name="u_rmii_rx" Register="29" Lut="13" T_Register="29(29)" T_Lut="13(13)"/>
+ <SubModule name="u_rmii_to_rgmii_fifo" Register="88" Alu="24" Lut="107" Bsram="2" Ssram="6" T_Register="88(88)" T_Alu="24(24)" T_Lut="107(107)" T_Bsram="2(2)" T_Ssram="6(6)"/>
+ <SubModule name="u_rgmii_tx" Register="23" Lut="22" T_Register="23(23)" T_Lut="22(22)"/>
+</Module>

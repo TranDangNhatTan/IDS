@@ -1,0 +1,37 @@
+{
+  "model": "DecisionTreeClassifier",
+  "task": "40-class attack-name classification",
+  "ground_truth_sha256": "a9fca7f5819ac59c9d7d2576e23aaa89c50e98394e405f9f8bc3e201b49b9fb6",
+  "feature_count": 41,
+  "class_count": 40,
+  "seed": 42,
+  "selection_rule": "Highest validation macro-F1; among configurations within 0.005 absolute macro-F1, choose the fewest nodes, then higher attack recall and lower FPR. Fixed before test access.",
+  "selected_max_depth": null,
+  "selected_min_samples_leaf": 1,
+  "actual_depth": 50,
+  "node_count": 2301,
+  "leaf_count": 1151,
+  "encoded_feature_count": 121,
+  "model_file_bytes": 890731,
+  "python": "3.11.9",
+  "sklearn": "1.7.2",
+  "python_executable": "D:\\TranDangNhatTan_24IC054_VKU\\Junior\\FPGA_MCU_IDS\\.venv\\Scripts\\python.exe",
+  "split_counts": {
+    "train": 103366,
+    "test": 22156,
+    "validation": 22152
+  },
+  "classes_absent_from_validation": [
+    "spy",
+    "sqlattack",
+    "udpstorm",
+    "worm"
+  ],
+  "checks": {
+    "41_features_only": true,
+    "unique_feature_vectors": true,
+    "splits_disjoint_and_complete": true,
+    "selection_before_test": true,
+    "serialization_prediction_parity": true
+  }
+}

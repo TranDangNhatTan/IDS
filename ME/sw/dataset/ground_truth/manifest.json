@@ -1,0 +1,66 @@
+{
+  "purpose": "Project-specific merged ground truth; not the standard NSL-KDD train/test benchmark",
+  "input_files": {
+    "KDDTrain+.txt": {
+      "rows": 125973,
+      "field_count_distribution": {
+        "43": 125973
+      },
+      "sha256": "44e12a6362806809fd33a7cfc486696379f5719c569dc929485a1fa68eae10e2"
+    },
+    "KDDTest+.txt": {
+      "rows": 22544,
+      "field_count_distribution": {
+        "43": 22544
+      },
+      "sha256": "95e6a286c720e7b5c27f56131918124e9278c4b410e9ee7c4f11e0439ffddaab"
+    },
+    "KDDTrain+_20Percent.txt": {
+      "rows": 25192,
+      "field_count_distribution": {
+        "43": 25192
+      },
+      "sha256": "9bb0837b9ec8f11f289b84ea7175304a3b835c48f3785454ff5e7e70b762dcb4"
+    },
+    "KDDTest-21.txt": {
+      "rows": 11850,
+      "field_count_distribution": {
+        "43": 11850
+      },
+      "sha256": "03e0b3d3f835effb7b79379b16d9783ca66baaa2a9a0333496aecb648d5f56e5"
+    }
+  },
+  "included_full_files": [
+    "KDDTrain+.txt",
+    "KDDTest+.txt"
+  ],
+  "excluded_subset_files": {
+    "KDDTrain+_20Percent.txt": {
+      "parent": "KDDTrain+.txt",
+      "is_exact_subset": true,
+      "unique_rows": 25192,
+      "new_rows": 0
+    },
+    "KDDTest-21.txt": {
+      "parent": "KDDTest+.txt",
+      "is_exact_subset": true,
+      "unique_rows": 11850,
+      "new_rows": 0
+    }
+  },
+  "raw_included_rows": 148517,
+  "exact_43_field_unique_rows": 147907,
+  "unique_feature_vectors_before_conflict_removal": 147790,
+  "conflicting_feature_vectors": 116,
+  "raw_rows_quarantined_for_label_conflict": 247,
+  "clean_unique_feature_vectors": 147674,
+  "feature_count": 41,
+  "target": "label",
+  "excluded_from_model": [
+    "difficulty",
+    "source_file",
+    "source_row_one_based"
+  ],
+  "class_count": 40,
+  "ground_truth_sha256": "a9fca7f5819ac59c9d7d2576e23aaa89c50e98394e405f9f8bc3e201b49b9fb6"
+}

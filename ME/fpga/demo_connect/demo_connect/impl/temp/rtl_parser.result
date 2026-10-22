@@ -1,0 +1,110 @@
+[
+ {
+  "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+  "InstLine" : 3,
+  "InstName" : "top_acg525_rgmii_rmii_bridge",
+  "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+  "ModuleLine" : 3,
+  "ModuleName" : "top_acg525_rgmii_rmii_bridge",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 211,
+    "InstName" : "u_reset_sys",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/reset_sync.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "reset_sync"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 214,
+    "InstName" : "u_reset_rmii",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/reset_sync.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "reset_sync"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 217,
+    "InstName" : "u_reset_rgmii_rx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/reset_sync.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "reset_sync"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 220,
+    "InstName" : "u_mdio_init",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/rtl8211f_mdio_init.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "rtl8211f_mdio_init"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 229,
+    "InstName" : "u_uart_debug_reporter",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/uart_debug_reporter.v",
+    "ModuleLine" : 4,
+    "ModuleName" : "uart_debug_reporter",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/uart_debug_reporter.v",
+      "InstLine" : 51,
+      "InstName" : "u_uart_tx_byte",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/uart_tx_byte.v",
+      "ModuleLine" : 4,
+      "ModuleName" : "uart_tx_byte"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 236,
+    "InstName" : "u_rgmii_rx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/rgmii_100_deserializer.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "rgmii_100_deserializer"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 247,
+    "InstName" : "u_rgmii_to_rmii_fifo",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/async_packet_fifo.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "async_packet_fifo"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 265,
+    "InstName" : "u_rmii_tx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/rmii_serializer.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "rmii_serializer"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 280,
+    "InstName" : "u_rmii_rx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/rmii_deserializer.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "rmii_deserializer"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 291,
+    "InstName" : "u_rmii_to_rgmii_fifo",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/async_packet_fifo.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "async_packet_fifo"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/top_acg525_rgmii_rmii_bridge.v",
+    "InstLine" : 309,
+    "InstName" : "u_rgmii_tx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/demo_connect/src/rgmii_100_serializer.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "rgmii_100_serializer"
+   }
+  ]
+ }
+]
