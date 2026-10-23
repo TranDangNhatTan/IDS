@@ -10,6 +10,12 @@ Program `release/pi_uart_ids.fs` into `GW5A-LV25UG324C2/I1` with Gowin
 Programmer. Do not use the older `pi_uart_ids.fs` outside this `fpga/release`
 directory or any `final_pi4_uart_rx.fs`; those images do not implement v2.
 
+The current verified release image has SHA-256:
+
+```text
+1EA7B915064A762E9FEFDD958CA614384E43E201212F05FC17EE5E25003DC300
+```
+
 ## Wiring
 
 | Raspberry Pi 4 | ACG525 P6 / FPGA |
@@ -37,6 +43,8 @@ active-low LEDs, the visual on/off state is inverted.
 ## Build evidence
 
 Run `scripts/build_gowin.ps1`. The final v2 implementation completed with
-zero setup violations, zero hold violations and an actual Fmax of 75.113 MHz
+zero setup violations, zero hold violations and an actual Fmax of 67.705 MHz
 against the 50 MHz constraint. It uses 52 of 56 BSRAMs: two explicit model
-banks preserve the active model during a rejected upload.
+banks preserve the active model during a rejected upload. The ABI regression
+`sim/tb_model_manager_ack_v2.v` verifies `MODEL_WRITE_ACK` for node 0 returns
+`status=0, node_index=0, accepted_count=1`.
