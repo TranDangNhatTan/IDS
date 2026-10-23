@@ -12,6 +12,9 @@ module model_manager_v2 #(parameter NODE_COUNT=1273)(
  function [31:0] crc32_byte;input [31:0] c;input [7:0] d;integer i;reg [31:0] t;begin t=c^d;for(i=0;i<8;i=i+1)t=t[0]?((t>>1)^32'hEDB88320):(t>>1);crc32_byte=t;end endfunction
  function [31:0] crc32_word_le;input [31:0] c;input [63:0] w;integer j;reg [31:0] t;begin t=c;for(j=0;j<8;j=j+1)t=crc32_byte(t,w[j*8 +:8]);crc32_word_le=t;end endfunction
  task respond;input [7:0] typ;input [15:0] sq;input [7:0] st;begin response_valid<=1;response_type<=typ;response_seq<=sq;response_len<=5;response_payload<=0;response_payload[7:0]<=st;response_payload[23:8]<=accepted_count;response_payload[39:24]<=current_version;end endtask
+ // MODEL_WRITE_ACK has a different ABI from the other 5-byte ACKs:
+ // status | node_index | accepted_count.
+ task respond_write;input [15:0] sq;input [7:0] st;input [15:0] node;input [15:0] count;begin response_valid<=1;response_type<=8'h82;response_seq<=sq;response_len<=5;response_payload<=0;response_payload[7:0]<=st;response_payload[23:8]<=node;response_payload[39:24]<=count;end endtask
  always @(posedge clk or negedge rst_n)begin
   if(!rst_n)begin write_en<=0;write_addr<=0;write_data<=0;commit<=0;commit_version<=0;model_valid<=0;upload_open<=0;accepted_count<=0;upload_error_count<=0;response_valid<=0;response_type<=0;response_seq<=0;response_len<=0;response_payload<=0;expected_crc<=0;crc_work<=0;requested_version<=0;end
   else begin write_en<=0;commit<=0;response_valid<=0;
@@ -23,24 +26,21 @@ module model_manager_v2 #(parameter NODE_COUNT=1273)(
      else begin
       upload_open<=1;accepted_count<=0;crc_work<=32'hffff_ffff;expected_crc<=payload[47:16];requested_version<=payload[63:48];
       respond(8'h81,frame_seq,OK);
-      // ACK acknowledges the newly opened staging image, not the previous one.
+      // BEGIN_ACK reports the current active model, not the requested version.
       response_payload[23:8] <= 16'd0;
-      response_payload[39:24] <= payload[63:48];
      end
     end
     8'h02:begin // MODEL_WRITE
      idx=payload[15:0];word=payload[79:16];
-     if(payload_len!=10)begin upload_error_count<=upload_error_count+1;respond(8'h82,frame_seq,BAD_COUNT);end
-     else if(!upload_open)respond(8'h82,frame_seq,BAD_STATE);
-     else if(idx>=NODE_COUNT)begin upload_error_count<=upload_error_count+1;respond(8'h82,frame_seq,BAD_INDEX);end
-     else if(idx<accepted_count)respond(8'h82,frame_seq,OK);
-     else if(idx!=accepted_count)begin upload_error_count<=upload_error_count+1;respond(8'h82,frame_seq,BAD_INDEX);end
+     if(payload_len!=10)begin upload_error_count<=upload_error_count+1;respond_write(frame_seq,BAD_COUNT,idx,accepted_count);end
+     else if(!upload_open)respond_write(frame_seq,BAD_STATE,idx,accepted_count);
+     else if(idx>=NODE_COUNT)begin upload_error_count<=upload_error_count+1;respond_write(frame_seq,BAD_INDEX,idx,accepted_count);end
+     else if(idx<accepted_count)respond_write(frame_seq,OK,idx,accepted_count);
+     else if(idx!=accepted_count)begin upload_error_count<=upload_error_count+1;respond_write(frame_seq,BAD_INDEX,idx,accepted_count);end
      else begin
       write_en<=1;write_addr<=idx[11:0];write_data<=word;accepted_count<=accepted_count+1'b1;crc_work<=crc32_word_le(crc_work,word);
-      respond(8'h82,frame_seq,OK);
-      // Non-blocking state update occurs after this edge; return the count just accepted.
-      response_payload[23:8] <= accepted_count + 1'b1;
-      response_payload[39:24] <= requested_version;
+      // Return the request's node index and the count after accepting it.
+      respond_write(frame_seq,OK,idx,accepted_count + 1'b1);
      end
     end
     8'h03:begin // MODEL_COMMIT

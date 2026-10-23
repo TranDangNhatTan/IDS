@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top_pi_uart_ids" Register="161" Alu="77" Lut="127" Bsram="18" T_Register="4654(161)" T_Alu="245(77)" T_Lut="6113(127)" T_Bsram="34(18)" T_Ssram="16(0)">
- <SubModule name="rx" Register="33" Lut="60" T_Register="33(33)" T_Lut="60(60)"/>
- <SubModule name="frx" Register="2103" Alu="38" Lut="2083" Ssram="16" T_Register="2103(2103)" T_Alu="38(38)" T_Lut="2083(2083)" T_Ssram="16(16)"/>
- <SubModule name="mgr" Register="280" Alu="94" Lut="526" T_Register="280(280)" T_Alu="94(94)" T_Lut="526(526)"/>
- <SubModule name="eng" Register="44" Alu="22" Lut="80" T_Register="737(44)" T_Alu="22(22)" T_Lut="899(80)" T_Bsram="16(0)">
+<Module name="top_pi_uart_ids" Register="161" Alu="77" Lut="127" Bsram="18" T_Register="4638(161)" T_Alu="245(77)" T_Lut="6084(127)" T_Bsram="34(18)" T_Ssram="16(0)">
+ <SubModule name="rx" Register="33" Lut="61" T_Register="33(33)" T_Lut="61(61)"/>
+ <SubModule name="frx" Register="2103" Alu="38" Lut="2080" Ssram="16" T_Register="2103(2103)" T_Alu="38(38)" T_Lut="2080(2080)" T_Ssram="16(16)"/>
+ <SubModule name="mgr" Register="264" Alu="94" Lut="484" T_Register="264(264)" T_Alu="94(94)" T_Lut="484(484)"/>
+ <SubModule name="eng" Register="44" Alu="22" Lut="86" T_Register="737(44)" T_Alu="22(22)" T_Lut="907(86)" T_Bsram="16(0)">
   <SubModule name="model" Register="77" Lut="194" Bsram="16" T_Register="77(77)" T_Lut="194(194)" T_Bsram="16(16)"/>
-  <SubModule name="regs" Register="616" Lut="625" T_Register="616(616)" T_Lut="625(625)"/>
+  <SubModule name="regs" Register="616" Lut="627" T_Register="616(616)" T_Lut="627(627)"/>
  </SubModule>
- <SubModule name="ftx" Register="1309" Alu="14" Lut="2371" T_Register="1340(1309)" T_Alu="14(14)" T_Lut="2418(2371)">
-  <SubModule name="tx" Register="31" Lut="47" T_Register="31(31)" T_Lut="47(47)"/>
+ <SubModule name="ftx" Register="1309" Alu="14" Lut="2379" T_Register="1340(1309)" T_Alu="14(14)" T_Lut="2425(2379)">
+  <SubModule name="tx" Register="31" Lut="46" T_Register="31(31)" T_Lut="46(46)"/>
  </SubModule>
 </Module>
