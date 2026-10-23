@@ -1,0 +1,13 @@
+{
+  "interface": "eth0",
+  "pi_data_ip": "192.168.10.2",
+  "dashboard_port": 8080,
+  "uart_port": "/dev/serial0",
+  "baudrate": 115200,
+  "uart_timeout_ms": 800,
+  "uart_retry_limit": 2,
+  "promiscuous_mode": false,
+  "log_path": "logs/pi_ids.jsonl",
+  "log_max_bytes": 1048576,
+  "log_backup_count": 3
+}

@@ -1,85 +1,94 @@
-# Pi–FPGA IDS protocol contract v1
+# Pi–FPGA IDS protocol contract v2
 
-This is the single source of truth for all three implementations. Do not change
-any field, byte order, feature order, or CRC rule without updating every side.
+This document is the UART ABI for the FPGA, Pi server, and Laptop B test
+generator. Version 2 adds model upload. All three implementations must use it
+unchanged.
 
-## Physical topology
+## Topology and serial link
 
 ```text
-Laptop B Ethernet NIC -> Pi eth0 (direct cable or same LAN)
-Pi GPIO14/TXD0, physical pin 8  -> ACG525 P6 Pin 1 (GPIO0) -> FPGA C17 (UART RX)
-Pi GPIO15/RXD0, physical pin 10 <- ACG525 P6 Pin 4 (GPIO3) <- FPGA G14 (UART TX)
-Pi GND, physical pin 6          -> ACG525 P6 Pin GND       -> Common Ground
-Laptop B browser -> http://<pi-ip>:8080
+Laptop B Ethernet -> Pi eth0
+Pi pin 8 GPIO14/TXD0  -> ACG525 P6 GPIO0 -> FPGA C17 (UART RX)
+Pi pin 10 GPIO15/RXD0 <- ACG525 P6 GPIO3 <- FPGA G14 (UART TX)
+Pi pin 6 GND          -> ACG525 GND
+Laptop B browser      -> http://192.168.10.2:8080
 ```
 
-Pi-to-FPGA (GPIO14 -> C17) and FPGA-to-Pi (G14 -> GPIO15) form a direct, full-duplex
-2-wire 3.3-V TTL UART link with common ground. Pure GPIO connection; no USB cable
-or USB-to-UART bridge is used in the runtime data path.
+The link is direct 3.3-V TTL only: no 5-V, RS-232, USB cable, or USB UART.
+It is 115200 baud, 8N1, no flow control, on one full-duplex Pi device
+`/dev/serial0`. The ACG525 board clock is the verified **50 MHz** oscillator
+on T9; do not assume 500 MHz.
 
-## UART electrical and serial settings
+## Common frame format
 
-* 3.3-V TTL only; never connect RS-232 or 5 V.
-* 115200 baud, 8 data bits, no parity, one stop bit, no flow control.
-* Pi UART port: single full-duplex `/dev/serial0` (or `/dev/ttyAMA0`) for both
-  TX (GPIO14) and RX (GPIO15). No `/dev/ttyUSB*` device is involved.
-
-## Framing
-
-Each UART frame is COBS encoded and terminated by one `0x00` byte. CRC is
-calculated before COBS encoding. A decoded frame is:
+Every frame is COBS encoded and followed by one `0x00` delimiter. Decode it
+before validating:
 
 ```text
 version:u8 | type:u8 | sequence:u16-le | payload_length:u16-le | payload | crc16:u16-le
 ```
 
-* `version = 0x01`
-* CRC = CRC-16/CCITT-FALSE: polynomial `0x1021`, initial `0xFFFF`, no final
-  XOR; cover all bytes from `version` through the final payload byte.
-* Reject a frame on COBS, length, version, type, or CRC failure.
-* Feature type is `0x10`; result type is `0x20`.
+`version = 0x02`. CRC is CRC-16/CCITT-FALSE (polynomial `0x1021`, initial
+`0xFFFF`, final XOR `0x0000`) over every decoded byte except the CRC itself.
+Reject COBS, version, type, exact length, and CRC failures. Multi-byte fields
+are little-endian. `sequence` is the request sequence and is copied to its ACK
+or RESULT. The sender retries a request with the same sequence at most twice.
 
-## FEATURE payload, Pi -> FPGA
+## Model upload — Pi to FPGA at every FPGA boot
 
-Payload length is exactly 77 bytes. It contains 28 unsigned 22-bit encoded
-features, indexed 0 through 27. Let `S` be a 616-bit little-endian bit stream:
+The fixed model is `ME/hw/model_export/dt_fpga_flow28_fixed/node_rom.hex`:
+exactly 1,273 lines, each a 16-hex-digit 64-bit node word. Pi owns the file and
+retains it locally. FPGA model RAM is volatile: after each FPGA configuration,
+Pi must upload and commit the complete image before sending FEATURE frames.
+
+`image_crc32` is the standard IEEE CRC-32 of the concatenated binary node
+words in file order, where each 16-digit hex word is converted to 8 bytes
+little-endian. It is not a CRC of ASCII text.
+
+| Direction | Type | Name | Exact payload |
+|---|---:|---|---|
+| Pi → FPGA | `0x01` | MODEL_BEGIN | `node_count:u16=1273 | image_crc32:u32 | requested_model_version:u16` (8 bytes) |
+| FPGA → Pi | `0x81` | MODEL_BEGIN_ACK | `status:u8 | accepted_count:u16 | active_model_version:u16` (5 bytes) |
+| Pi → FPGA | `0x02` | MODEL_WRITE | `node_index:u16 | node_word:u64-le` (10 bytes) |
+| FPGA → Pi | `0x82` | MODEL_WRITE_ACK | `status:u8 | node_index:u16 | accepted_count:u16` (5 bytes) |
+| Pi → FPGA | `0x03` | MODEL_COMMIT | `image_crc32:u32 | requested_model_version:u16` (6 bytes) |
+| FPGA → Pi | `0x83` | MODEL_COMMIT_ACK | `status:u8 | accepted_count:u16 | active_model_version:u16` (5 bytes) |
+| Pi → FPGA | `0x04` | MODEL_STATUS | empty (0 bytes) |
+| FPGA → Pi | `0x84` | MODEL_STATUS_REPLY | `status:u8 | accepted_count:u16 | active_model_version:u16` (5 bytes) |
+
+Status: `0=OK`, `1=BAD_STATE`, `2=BAD_INDEX`, `3=BAD_COUNT`, `4=IMAGE_CRC`,
+`5=BUSY`, `6=UNSUPPORTED_VERSION`. The FPGA clears the staging-valid bitmap on
+accepted BEGIN. It ACKs duplicate MODEL_WRITE for an already received matching
+index idempotently. COMMIT succeeds only when all 1,273 nodes were received and
+the staging CRC matches. A failed upload must leave the prior active model
+unchanged. FPGA must not accept FEATURE while upload/commit is incomplete.
+
+Pi performs stop-and-wait for BEGIN, every WRITE, and COMMIT, shows confirmed
+node count/progress in the dashboard, and retries a request at most twice.
+
+## Inference
+
+| Direction | Type | Name | Exact payload |
+|---|---:|---|---|
+| Pi → FPGA | `0x10` | FEATURE | 28 packed unsigned 22-bit values (77 bytes) |
+| FPGA → Pi | `0x20` | RESULT | `class_id:u8 | leaf_node:u16 | step_count:u8 | error_code:u8 | model_version:u16` (7 bytes) |
+
+For FEATURE, let `S` be a 616-bit little-endian stream:
+`S[22*j +: 22] = feature[j]`, `payload[k] = S[8*k +:8]`. Values must be
+`0..4194303`. Pi applies the exact order/caps from
+`ME/fpga/ip_final/src/deps/ids_feature_quantizer.v`: specifically feature 4 is
+raw source bytes `>>2`, capped 240748; feature 5 is raw destination bytes
+`>>6`, capped 3309. FPGA must not quantize again. One FEATURE is outstanding at
+once; duplicate RESULTS are deduplicated by sequence.
+
+## Laptop B test traffic
+
+Laptop B sends Ethernet/IPv4/UDP to Pi eth0, destination UDP port 40000:
 
 ```text
-S[22*j +: 22] = feature[j], for j = 0..27
-payload[k] = S[8*k +: 8], for k = 0..76
+ASCII "IDSRAW1" (7 bytes) | sequence:u32-le | deterministic test bytes
 ```
 
-All feature values must be in `[0, 4194303]`. Feature semantics must match the
-existing `ME/fpga/ip_final/src/deps/ids_feature_quantizer.v` exactly. In
-particular, Pi produces the already-encoded values: feature 4 is raw source
-bytes shifted right by 2 and capped at 240748; feature 5 is raw destination
-bytes shifted right by 6 and capped at 3309. The remaining caps/order are the
-ones in that RTL file. Do not quantize again inside the FPGA classifier.
-
-Pi starts with at most one unacknowledged FEATURE frame. It retries the same
-sequence at most twice after a configurable timeout. Pi deduplicates repeated
-RESULT frames by sequence.
-
-## RESULT payload, FPGA -> Pi
-
-Payload length is exactly 7 bytes:
-
-```text
-class_id:u8 | leaf_node:u16-le | step_count:u8 | error_code:u8 | model_version:u16-le
-```
-
-The header `sequence` is copied from the corresponding FEATURE. A result is
-emitted for each accepted feature record, including an inference error.
-
-## Laptop B raw Ethernet test traffic
-
-Laptop B generates Ethernet/IPv4/UDP frames addressed to Pi's MAC and IPv4
-address, destination UDP port 40000. UDP payload is:
-
-```text
-ASCII "IDSRAW1" (7 bytes) | sequence:u32-le | test bytes
-```
-
-Pi captures this traffic on `eth0`, validates the marker and sequence, creates
-the 28 encoded features, and publishes the complete lifecycle to its dashboard.
-The traffic generator is only a test source; it never talks to the FPGA UART.
+Laptop B never accesses the FPGA UART. It may send labelled test profiles; Pi
+may display prediction-versus-supplied-label test statistics, never live
+accuracy for unlabelled traffic.
