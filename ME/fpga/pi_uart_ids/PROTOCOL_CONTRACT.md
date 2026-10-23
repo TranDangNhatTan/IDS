@@ -7,22 +7,22 @@ any field, byte order, feature order, or CRC rule without updating every side.
 
 ```text
 Laptop B Ethernet NIC -> Pi eth0 (direct cable or same LAN)
-Pi GPIO14/TXD0, physical pin 8 -> ACG525 P6-GPIO0 -> FPGA C17
-Pi GND, physical pin 6 -> ACG525 GND
-FPGA V8 -> onboard CH9102F -> USB cable -> Pi USB host (/dev/ttyUSB*)
+Pi GPIO14/TXD0, physical pin 8  -> ACG525 P6 Pin 1 (GPIO0) -> FPGA C17 (UART RX)
+Pi GPIO15/RXD0, physical pin 10 <- ACG525 P6 Pin 4 (GPIO3) <- FPGA G14 (UART TX)
+Pi GND, physical pin 6          -> ACG525 P6 Pin GND       -> Common Ground
 Laptop B browser -> http://<pi-ip>:8080
 ```
 
-Pi-to-FPGA and FPGA-to-Pi are independent UART directions. Laptop B is not
-connected to the CH9102F during normal operation.
+Pi-to-FPGA (GPIO14 -> C17) and FPGA-to-Pi (G14 -> GPIO15) form a direct, full-duplex
+2-wire 3.3-V TTL UART link with common ground. Pure GPIO connection; no USB cable
+or USB-to-UART bridge is used in the runtime data path.
 
 ## UART electrical and serial settings
 
 * 3.3-V TTL only; never connect RS-232 or 5 V.
 * 115200 baud, 8 data bits, no parity, one stop bit, no flow control.
-* Pi TX port: `/dev/serial0` (GPIO14/TXD0).
-* Pi RX port: explicit `/dev/ttyUSB*` CH9102F device. Never read results from
-  `/dev/serial0`.
+* Pi UART port: single full-duplex `/dev/serial0` (or `/dev/ttyAMA0`) for both
+  TX (GPIO14) and RX (GPIO15). No `/dev/ttyUSB*` device is involved.
 
 ## Framing
 
