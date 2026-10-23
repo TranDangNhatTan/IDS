@@ -1,19 +1,28 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_ingest.v'
-Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_quantizer.v'
-Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_regfile.v'
-Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_node_decoder.v'
-Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\rmii_deserializer.v'
-Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\rmii_serializer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ip\eth_rgmii_pll\eth_rgmii_pll.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ip\eth_rgmii_pll\eth_rgmii_pll_mod.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\pll_init.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\rgmii_rx_byte.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\rgmii_tx_byte.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\uart_tx_byte.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_uart_trace.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_feature_rx.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_reply_tx.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_lan_trace_tx.v'
 Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_top_live.v'
 Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_tree_engine_live.v'
 Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_tree_rom_banked.v'
-Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_feature_rx.v'
-Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_reply_tx.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_node_decoder.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_regfile.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_quantizer.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_ingest.v'
 Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\top_acg525_ids_core.v'
-Compiling module 'top_acg525_ids_core'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\top_acg525_ids_core.v":3)
-Compiling module 'rmii_deserializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\rmii_deserializer.v":3)
+Compiling module 'top_acg525_ids_core'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\top_acg525_ids_core.v":4)
+Compiling module 'eth_rgmii_pll'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ip\eth_rgmii_pll\eth_rgmii_pll.v":1)
+Compiling module 'eth_rgmii_pll_MOD'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ip\eth_rgmii_pll\eth_rgmii_pll_mod.v":10)
+Compiling module 'PLL_INIT(MULTI_FAC=14)'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\pll_init.v":4)
+Compiling module 'rgmii_rx_byte'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\rgmii_rx_byte.v":6)
 Compiling module 'ids_udp_feature_rx'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_feature_rx.v":6)
 Compiling module 'ids_top_live'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_top_live.v":1)
 Compiling module 'ids_feature_ingest'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_ingest.v":1)
@@ -22,8 +31,10 @@ Compiling module 'ids_tree_engine_live'("D:\TranDangNhatTan_24IC054_VKU\Junior\F
 Compiling module 'ids_tree_rom_banked'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_tree_rom_banked.v":5)
 Compiling module 'ids_node_decoder'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_node_decoder.v":1)
 Compiling module 'ids_feature_regfile'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_regfile.v":1)
-Compiling module 'ids_udp_reply_tx'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_reply_tx.v":5)
-Compiling module 'rmii_serializer'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\rmii_serializer.v":3)
+Compiling module 'ids_uart_trace'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_uart_trace.v":8)
+Compiling module 'uart_tx_byte'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\uart_tx_byte.v":3)
+Compiling module 'ids_udp_reply_tx'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_reply_tx.v":6)
+Compiling module 'rgmii_tx_byte'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\rgmii_tx_byte.v":8)
 NOTE  (EX0101) : Current top module is "top_acg525_ids_core"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

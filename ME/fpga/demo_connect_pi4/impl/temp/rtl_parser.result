@@ -1,0 +1,28 @@
+[
+ {
+  "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect_pi4/src/uart_forwarder.v",
+  "InstLine" : 3,
+  "InstName" : "uart_forwarder",
+  "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect_pi4/src/uart_forwarder.v",
+  "ModuleLine" : 3,
+  "ModuleName" : "uart_forwarder",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect_pi4/src/uart_forwarder.v",
+    "InstLine" : 33,
+    "InstName" : "receiver",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect_pi4/src/uart_rx.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "uart_rx"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect_pi4/src/uart_forwarder.v",
+    "InstLine" : 45,
+    "InstName" : "transmitter",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect_pi4/src/uart_tx.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "uart_tx"
+   }
+  ]
+ }
+]

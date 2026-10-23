@@ -1,0 +1,29 @@
+Reading netlist file: "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect_pi4\impl\gwsynthesis\uart_forwarder.vg"
+Parsing netlist file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect_pi4\impl\gwsynthesis\uart_forwarder.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect_pi4\constraints\acg525.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect_pi4\impl\pnr\uart_forwarder.power.html" completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect_pi4\impl\pnr\uart_forwarder.pin.html" completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect_pi4\impl\pnr\uart_forwarder.rpt.html" completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect_pi4\impl\pnr\uart_forwarder.rpt.txt" completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect_pi4\impl\pnr\uart_forwarder.tr.html" completed
+Fri Oct 23 19:02:42 2026
+

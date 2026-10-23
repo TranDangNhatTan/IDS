@@ -1,0 +1,99 @@
+#! c:/iverilog/bin/vvp
+:ivl_version "0.10.0 (devel)" "(s20130827)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+:vpi_module "v2009";
+S_01311A88 .scope module, "rgmii_tx_byte" "rgmii_tx_byte" 2 6;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk"
+    .port_info 1 /INPUT 1 "rst_n"
+    .port_info 2 /INPUT 8 "byte_data"
+    .port_info 3 /INPUT 1 "byte_valid"
+    .port_info 4 /OUTPUT 1 "byte_ready"
+    .port_info 5 /OUTPUT 4 "txd"
+    .port_info 6 /OUTPUT 1 "tx_ctl"
+o01193FB4 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v01311BB8_0 .net "byte_data", 7 0, o01193FB4;  0 drivers
+v01311C10_0 .net "byte_ready", 0 0, L_011B10E8;  1 drivers
+o01193FE4 .functor BUFZ 1, C4<z>; HiZ drive
+v0131EDA8_0 .net "byte_valid", 0 0, o01193FE4;  0 drivers
+o01193FFC .functor BUFZ 1, C4<z>; HiZ drive
+v0131EE00_0 .net "clk", 0 0, o01193FFC;  0 drivers
+v0131EE58_0 .var "held_byte", 7 0;
+v0131EEB0_0 .var "held_valid", 0 0;
+v0131EF08_0 .var "high_nibble", 0 0;
+o0119405C .functor BUFZ 1, C4<z>; HiZ drive
+v0131EF60_0 .net "rst_n", 0 0, o0119405C;  0 drivers
+v011B0FF0_0 .var "tx_ctl", 0 0;
+v011B1090_0 .var "txd", 3 0;
+E_01318A18/0 .event negedge, v0131EF60_0;
+E_01318A18/1 .event posedge, v0131EE00_0;
+E_01318A18 .event/or E_01318A18/0, E_01318A18/1;
+L_011B10E8 .reduce/nor v0131EF08_0;
+    .scope S_01311A88;
+T_0 ;
+    %wait E_01318A18;
+    %load/v 8, v0131EF60_0, 1;
+    %inv 8, 1;
+    %jmp/0xz  T_0.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0131EF08_0, 0, 0;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0131EE58_0, 0, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0131EEB0_0, 0, 0;
+    %ix/load 0, 4, 0;
+    %assign/v0 v011B1090_0, 0, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011B0FF0_0, 0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/v 8, v0131EF08_0, 1;
+    %inv 8, 1;
+    %jmp/0xz  T_0.2, 8;
+    %load/v 8, v01311BB8_0, 8;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0131EE58_0, 0, 8;
+    %load/v 8, v0131EDA8_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0131EEB0_0, 0, 8;
+    %load/v 8, v01311BB8_0, 4; Only need 4 of 8 bits
+; Save base=8 wid=4 in lookaside.
+    %ix/load 0, 4, 0;
+    %assign/v0 v011B1090_0, 0, 8;
+    %load/v 8, v0131EDA8_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011B0FF0_0, 0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0131EF08_0, 0, 1;
+    %jmp T_0.3;
+T_0.2 ;
+    %ix/load 1, 4, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_0.4, 4;
+    %load/x1p 8, v0131EE58_0, 4;
+    %jmp T_0.5;
+T_0.4 ;
+    %mov 8, 2, 4;
+T_0.5 ;
+; Save base=8 wid=4 in lookaside.
+    %ix/load 0, 4, 0;
+    %assign/v0 v011B1090_0, 0, 8;
+    %load/v 8, v0131EEB0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v011B0FF0_0, 0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0131EF08_0, 0, 0;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    ".\src\rgmii_tx_byte.v";

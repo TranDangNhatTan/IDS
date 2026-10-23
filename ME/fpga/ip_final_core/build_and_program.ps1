@@ -7,6 +7,8 @@ try {
  if(!(Test-Path $gowin)){throw "Gowin CLI not found: $gowin"}
  & $gowin build_gowin.tcl
  if($LASTEXITCODE -ne 0){throw "Gowin build failed: $LASTEXITCODE"}
+ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $root 'scripts\check_timing.ps1')
+ if($LASTEXITCODE -ne 0){throw 'Timing gate failed; release bitstream was not updated'}
  $fs='impl\pnr\ip_final_core.fs'
  if(!(Test-Path $fs)){throw "Bitstream missing: $fs"}
  New-Item -ItemType Directory -Force release|Out-Null

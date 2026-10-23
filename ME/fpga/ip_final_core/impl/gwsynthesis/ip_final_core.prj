@@ -4,17 +4,23 @@
     <Version>beta</Version>
     <Device id="GW5A-25B" package="UBGA324" speed="2" partNumber="GW5A-LV25UG324C2/I1"/>
     <FileList>
-        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_ingest.v" type="verilog"/>
-        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_quantizer.v" type="verilog"/>
-        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_regfile.v" type="verilog"/>
-        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_node_decoder.v" type="verilog"/>
-        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\rmii_deserializer.v" type="verilog"/>
-        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\rmii_serializer.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ip\eth_rgmii_pll\eth_rgmii_pll.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ip\eth_rgmii_pll\eth_rgmii_pll_mod.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\pll_init.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\rgmii_rx_byte.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\rgmii_tx_byte.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\uart_tx_byte.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_uart_trace.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_feature_rx.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_reply_tx.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_lan_trace_tx.v" type="verilog"/>
         <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_top_live.v" type="verilog"/>
         <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_tree_engine_live.v" type="verilog"/>
         <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_tree_rom_banked.v" type="verilog"/>
-        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_feature_rx.v" type="verilog"/>
-        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\ids_udp_reply_tx.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_node_decoder.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_regfile.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_quantizer.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\deps\ids_feature_ingest.v" type="verilog"/>
         <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\src\top_acg525_ids_core.v" type="verilog"/>
     </FileList>
     <OptionList>
@@ -24,6 +30,7 @@
         <Option type="output_file" value="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final_core\impl\gwsynthesis\ip_final_core.vg"/>
         <Option type="print_all_synthesis_warning" value="0"/>
         <Option type="ram_rw_check" value="0"/>
+        <Option type="top_module" value="top_acg525_ids_core"/>
         <Option type="vcc" value="0.9"/>
         <Option type="verilog_language" value="verilog-2001"/>
         <Option type="vhdl_language" value="vhdl-1993"/>

@@ -1,18 +1,21 @@
 `timescale 1ns/1ps
-// Emits Ethernet/IPv4/UDP replies through RMII.  A peer is learned by the RX
+// Emits complete Ethernet/IPv4/UDP reply bytes. A RGMII DDR serializer is
+// connected at the top level. A peer is learned by the RX
 // parser; result packets use IDS1 and model completion uses ACK1. UDP checksum
 // is deliberately zero (legal for IPv4 UDP), while IPv4 header checksum is set.
 module ids_udp_reply_tx #(
- parameter [31:0] FPGA_IP=32'hC0A80132, parameter [15:0] FPGA_PORT=16'd55003,
+ // 192.168.50.50 matches the laptop Ethernet subnet 192.168.50.0/24.
+ parameter [31:0] FPGA_IP=32'hC0A83232, parameter [15:0] FPGA_PORT=16'd55003,
  parameter [47:0] FPGA_MAC=48'h025047414901
 ) (
  input wire clk,input wire rst_n,input wire peer_valid,input wire [47:0] peer_mac,input wire [31:0] peer_ip,input wire [15:0] peer_port,
- input wire result_valid,input wire [31:0] record_sequence,input wire [5:0] class_id,input wire [11:0] leaf_node,input wire [7:0] step_count,input wire [2:0] error_code,input wire [15:0] model_version,
- input wire model_ack,input wire model_ready,input wire [15:0] accepted_words,input wire [31:0] accepted_records,input wire [31:0] dropped_records,
- output wire [1:0] lan_txd,output wire lan_tx_en,output reg result_sent,output reg tx_error
+ input wire reply_toggle,input wire reply_is_ack,
+ input wire [31:0] record_sequence,input wire [5:0] class_id,input wire [11:0] leaf_node,input wire [7:0] step_count,input wire [2:0] error_code,input wire [15:0] model_version,
+ input wire model_ready,input wire [15:0] accepted_words,input wire [31:0] accepted_records,input wire [31:0] dropped_records,
+ output wire [7:0] tx_byte,output wire tx_byte_valid,input wire tx_byte_ready,output reg result_sent,output reg tx_error
 );
  localparam [6:0] BODY_BYTES=7'd65;
- reg sending,is_ack; reg [6:0] index; reg [31:0] seq_l; reg [5:0] class_l; reg [11:0] leaf_l; reg [7:0] steps_l; reg [2:0] error_l; reg [15:0] version_l,words_l; reg ready_l;
+ reg sending,is_ack,seen_toggle; reg [6:0] index; reg [31:0] seq_l; reg [5:0] class_l; reg [11:0] leaf_l; reg [7:0] steps_l; reg [2:0] error_l; reg [15:0] version_l,words_l; reg ready_l;
  reg [47:0] mac_l; reg [31:0] ip_l; reg [15:0] port_l; reg [31:0] accepted_l,dropped_l; reg [31:0] crc_l;
  wire [7:0] stream_byte; wire stream_ready;
  function [15:0] ip_checksum; input [31:0] dst; reg [31:0] sum; begin
@@ -38,28 +41,33 @@ module ids_udp_reply_tx #(
    default:body_byte=0;
   endcase
  end endfunction
- function [31:0] ethernet_crc; input dummy; integer k,b; reg [31:0] crc; reg [7:0] d; begin
-  crc=32'hFFFFFFFF;
-  for(k=0;k<BODY_BYTES;k=k+1) begin d=body_byte(k[6:0]); for(b=0;b<8;b=b+1) begin if(crc[0]^d[b]) crc=(crc>>1)^32'hEDB88320; else crc=crc>>1; end end
-  ethernet_crc=~crc;
+ // Advance CRC one byte per TX cycle.  This avoids a very large combinational
+ // 65-byte CRC network and maps efficiently on the GW5A fabric.
+ function [31:0] crc_next; input [31:0] crc_in; input [7:0] d; integer b; reg [31:0] c; begin
+  c=crc_in;
+  for(b=0;b<8;b=b+1) if(c[0]^d[b]) c=(c>>1)^32'hEDB88320; else c=c>>1;
+  crc_next=c;
  end endfunction
+ // Ethernet transmits the one's-complement of the running reflected CRC.
+ // Sending crc_l directly produces a bad FCS that a NIC silently discards.
+ wire [31:0] frame_fcs = ~crc_l;
  wire [7:0] frame_byte = (index<7)?8'h55 : (index==7)?8'hD5 : (index<8+BODY_BYTES)?body_byte(index-8) :
-                         (index==8+BODY_BYTES)?crc_l[7:0] : (index==9+BODY_BYTES)?crc_l[15:8] : (index==10+BODY_BYTES)?crc_l[23:16] : crc_l[31:24];
+                         (index==8+BODY_BYTES)?frame_fcs[7:0] : (index==9+BODY_BYTES)?frame_fcs[15:8] : (index==10+BODY_BYTES)?frame_fcs[23:16] : frame_fcs[31:24];
  assign stream_byte=frame_byte;
- rmii_serializer serializer(.clk(clk),.rst_n(rst_n),.byte_data(stream_byte),.byte_valid(sending),.byte_ready(stream_ready),.txd(lan_txd),.tx_en(lan_tx_en));
+ assign tx_byte=stream_byte;
+ assign tx_byte_valid=sending;
+ assign stream_ready=tx_byte_ready;
  always @(posedge clk or negedge rst_n) begin
-  if(!rst_n) begin sending<=0;is_ack<=0;index<=0;seq_l<=0;class_l<=0;leaf_l<=0;steps_l<=0;error_l<=0;version_l<=0;words_l<=0;ready_l<=0;mac_l<=0;ip_l<=0;port_l<=0;accepted_l<=0;dropped_l<=0;crc_l<=0;result_sent<=0;tx_error<=0;end
+  if(!rst_n) begin sending<=0;is_ack<=0;seen_toggle<=0;index<=0;seq_l<=0;class_l<=0;leaf_l<=0;steps_l<=0;error_l<=0;version_l<=0;words_l<=0;ready_l<=0;mac_l<=0;ip_l<=0;port_l<=0;accepted_l<=0;dropped_l<=0;crc_l<=0;result_sent<=0;tx_error<=0;end
   else begin
    result_sent<=0;
    if(!sending) begin
-    if(peer_valid && (model_ack || result_valid)) begin
-     is_ack<=model_ack; seq_l<=record_sequence; class_l<=class_id; leaf_l<=leaf_node; steps_l<=step_count; error_l<=error_code; version_l<=model_version; words_l<=accepted_words; ready_l<=model_ready;
-     mac_l<=peer_mac; ip_l<=peer_ip; port_l<=peer_port; accepted_l<=accepted_records; dropped_l<=dropped_records; index<=0; sending<=1;
-     // crc_l is calculated on the following cycle after the latches settle.
-    end else if((model_ack || result_valid) && !peer_valid) tx_error<=1;
-   end else if(index==0 && stream_ready) begin
-    crc_l<=ethernet_crc(1'b0); index<=1;
+    if(peer_valid && (reply_toggle!=seen_toggle)) begin
+     seen_toggle<=reply_toggle; is_ack<=reply_is_ack; seq_l<=record_sequence; class_l<=class_id; leaf_l<=leaf_node; steps_l<=step_count; error_l<=error_code; version_l<=model_version; words_l<=accepted_words; ready_l<=model_ready;
+     mac_l<=peer_mac; ip_l<=peer_ip; port_l<=peer_port; accepted_l<=accepted_records; dropped_l<=dropped_records; crc_l<=32'hffffffff; index<=0; sending<=1;
+    end else if((reply_toggle!=seen_toggle) && !peer_valid) begin seen_toggle<=reply_toggle;tx_error<=1;end
    end else if(stream_ready) begin
+    if(index>=8 && index<8+BODY_BYTES) crc_l<=crc_next(crc_l,body_byte(index-8));
     if(index==7+BODY_BYTES+4) begin sending<=0; index<=0; result_sent<=1; end else index<=index+1'b1;
    end
   end

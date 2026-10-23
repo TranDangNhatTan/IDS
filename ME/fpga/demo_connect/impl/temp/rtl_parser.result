@@ -1,0 +1,38 @@
+[
+ {
+  "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/src/top_acg525_gigabit_clock_diag.v",
+  "InstLine" : 4,
+  "InstName" : "top_acg525_gigabit_clock_diag",
+  "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/src/top_acg525_gigabit_clock_diag.v",
+  "ModuleLine" : 4,
+  "ModuleName" : "top_acg525_gigabit_clock_diag",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/src/top_acg525_gigabit_clock_diag.v",
+    "InstLine" : 13,
+    "InstName" : "pll",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/src/gowin_pll/gowin_pll_125m.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "gowin_pll_125m",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/src/gowin_pll/gowin_pll_125m.v",
+      "InstLine" : 3,
+      "InstName" : "u_pll",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/src/gowin_pll/gowin_pll_125m_mod.v",
+      "ModuleLine" : 3,
+      "ModuleName" : "gowin_pll_125m_MOD"
+     },
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/src/gowin_pll/gowin_pll_125m.v",
+      "InstLine" : 4,
+      "InstName" : "u_pll_init",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/demo_connect/src/pll_init.v",
+      "ModuleLine" : 4,
+      "ModuleName" : "PLL_INIT"
+     }
+    ]
+   }
+  ]
+ }
+]

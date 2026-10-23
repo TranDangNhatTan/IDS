@@ -1,0 +1,15 @@
+// ACG525 / GW5A-LV25UG324C2/I1, verified current board revision.
+IO_LOC "clk" T9;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+
+// Bank 1 is powered from VCC1P5 and shared with DDR3.
+IO_LOC "rst_n" B16;
+IO_PORT "rst_n" IO_TYPE=LVCMOS15 PULL_MODE=UP;
+
+// Carrier P6-GPIO0 -> B2B A99 -> B2_R9_P -> FPGA C17, bank 2 at 3.3 V.
+IO_LOC "uart_rx_pi" C17;
+IO_PORT "uart_rx_pi" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// FPGA V8 drives the onboard CH9102F RX input toward the host PC.
+IO_LOC "uart_tx_pc" V8;
+IO_PORT "uart_tx_pc" IO_TYPE=LVCMOS33 DRIVE=8 PULL_MODE=UP;

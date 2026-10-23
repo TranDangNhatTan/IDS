@@ -1,0 +1,10 @@
+{
+  "PiHost": "192.168.50.50",
+  "PiUser": "pi",
+  "PiProjectDir": "/home/pi/demo_connect_pi4",
+  "WindowsCom": "COM17",
+  "Baud": 115200,
+  "IntervalSeconds": 0.5,
+  "TestValues": ["55", "AA", "00", "FF", "A5", "5A"],
+  "TimeoutSeconds": 15
+}

@@ -2,51 +2,35 @@
  "Device" : "GW5A-25B",
  "Files" : [
   {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_ingest.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_quantizer.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_feature_regfile.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/ids_node_decoder.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/rmii_deserializer.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/deps/rmii_serializer.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_top_live.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_tree_engine_live.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_tree_rom_banked.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_udp_feature_rx.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ids_udp_reply_tx.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/top_acg525_ids_core.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ip/eth_rgmii_pll/eth_rgmii_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ip/eth_rgmii_pll/eth_rgmii_pll_mod.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/pll_init.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ip/eth_rgmii_pll/gowin_pll/eth_rgmii_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/ip/eth_rgmii_pll/gowin_pll/eth_rgmii_pll_mod.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/gowin_pll/eth_rgmii_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final_core/src/gowin_pll/eth_rgmii_pll_mod.v",
    "Type" : "verilog"
   }
  ],

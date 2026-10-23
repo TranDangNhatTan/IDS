@@ -5,17 +5,13 @@
     <Version>5</Version>
     <Device name="GW5A-25B" pn="GW5A-LV25UG324C2/I1">gw5a25b-007</Device>
     <FileList>
-        <File path="src/deps/ids_feature_ingest.v" type="file.verilog" enable="1"/>
-        <File path="src/deps/ids_feature_quantizer.v" type="file.verilog" enable="1"/>
-        <File path="src/deps/ids_feature_regfile.v" type="file.verilog" enable="1"/>
-        <File path="src/deps/ids_node_decoder.v" type="file.verilog" enable="1"/>
-        <File path="src/deps/rmii_deserializer.v" type="file.verilog" enable="1"/>
-        <File path="src/deps/rmii_serializer.v" type="file.verilog" enable="1"/>
-        <File path="src/ids_top_live.v" type="file.verilog" enable="1"/>
-        <File path="src/ids_tree_engine_live.v" type="file.verilog" enable="1"/>
-        <File path="src/ids_tree_rom_banked.v" type="file.verilog" enable="1"/>
-        <File path="src/ids_udp_feature_rx.v" type="file.verilog" enable="1"/>
-        <File path="src/ids_udp_reply_tx.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pll/eth_rgmii_pll.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pll/eth_rgmii_pll_mod.v" type="file.verilog" enable="1"/>
+        <File path="src/ip/eth_rgmii_pll/eth_rgmii_pll.v" type="file.verilog" enable="1"/>
+        <File path="src/ip/eth_rgmii_pll/eth_rgmii_pll_mod.v" type="file.verilog" enable="1"/>
+        <File path="src/ip/eth_rgmii_pll/gowin_pll/eth_rgmii_pll.v" type="file.verilog" enable="1"/>
+        <File path="src/ip/eth_rgmii_pll/gowin_pll/eth_rgmii_pll_mod.v" type="file.verilog" enable="1"/>
+        <File path="src/pll_init.v" type="file.verilog" enable="1"/>
         <File path="src/top_acg525_ids_core.v" type="file.verilog" enable="1"/>
         <File path="src/ip_final_core.cst" type="file.cst" enable="1"/>
         <File path="src/ip_final_core.sdc" type="file.sdc" enable="1"/>

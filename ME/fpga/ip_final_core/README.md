@@ -1,19 +1,23 @@
 # ACG525 FPGA IDS — LAN-only implementation
 
-This revision removes UART completely.  The laptop, switch/router and FPGA use
-only Ethernet/RMII.  The FPGA receives a Decision Tree model and preprocessed
-features over UDP, then returns classification telemetry over UDP.
+The application data path uses only the **onboard RTL8211F RGMII Ethernet
+PHY**. The FPGA receives a Decision Tree model and preprocessed features over
+UDP, then returns classification telemetry over UDP. UART is retained only as
+a change-driven hardware diagnostic; it is not part of the IDS protocol.
 
 ## Artifacts
 
 - Program this bitstream: `release/ip_final_core.fs`
-- Start dashboard: `powershell -ExecutionPolicy Bypass -File .\server\run_dashboard.ps1`
+- Verify RTL: `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify_ip_final_core.ps1`
+- Check post-route timing: `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\check_timing.ps1`
+- Build with mandatory timing gate: `powershell -NoProfile -ExecutionPolicy Bypass -File .\build_and_program.ps1`
+- Start dashboard: `powershell -NoProfile -ExecutionPolicy Bypass -File .\server\run_dashboard.ps1`
 - Dashboard: `http://127.0.0.1:8081`
 
 The dashboard binds UDP port **55003** for replies. The FPGA receives model and
-feature packets on UDP port **55002**. The default target is broadcast
-`255.255.255.255`; use the FPGA/switch network broadcast address if Windows
-does not route the global broadcast through the selected Ethernet adapter.
+feature packets on UDP port **55002**. On this setup the Ethernet adapter is
+`192.168.50.22/24`, so enter broadcast **`192.168.50.255`** in the dashboard.
+The reply source IP is `192.168.50.50`.
 
 ## Wire protocol
 
@@ -38,13 +42,15 @@ arrival order.
 
 1. Flash `release/ip_final_core.fs`.
 2. Connect the FPGA Ethernet port and laptop to the same switch. Use the same
-   IPv4 subnet for the laptop and the chosen broadcast target.
+   IPv4 subnet for the laptop and the chosen broadcast target. This stable
+   RGMII build requires Windows Ethernet status **Up / 100 Mbps**.
 3. Run the PowerShell script and open the dashboard.
 4. Click **Upload model**. Wait for the `model_ack` event and “FPGA ACK
    received: model active.” Do not start testing before this acknowledgement.
 5. Upload a prepared CSV with `label,f0,...,f27`.
-6. Start at **10,000 records/s**. The page reports sent/result count, accuracy,
-   input rate and the FPGA accepted/dropped counters. Increase rate only when
+6. Start at **50 records/s** for first hardware verification. The page reports
+   sent/result count, accuracy, offered input rate, completed result rate and
+   FPGA accepted/dropped counters. Increase rate only when
    `pending=0`, `unmatched=0` and `FPGA drops=0`.
 
 ## LEDs
@@ -52,15 +58,14 @@ arrival order.
 | LED | Signal |
 |---|---|
 | LED0 | 1 Hz heartbeat: FPGA configuration, clock and reset are alive |
-| LED1 | Toggles when FPGA accepts an `FTR2` feature record |
-| LED2 | Solid on when all 1,273 model words are committed and active |
-| LED3 | Toggles when FPGA transmits an `IDS1` result or `ACK1` reply |
+| LED1 | PHY reset released and 25 MHz PLL locked |
+| LED2 | Raw RGMII receive activity seen from PHY |
+| LED3 | Valid MOD1/FTR2 protocol accepted or a reply emitted |
 
-The testbench commands are:
+The verification script checks DDR RX/TX, IPv4/UDP filtering, Ethernet FCS,
+MOD1 address de-duplication, all 1,273 BRAM words, repeated COMMIT, FTR2 and
+the change-driven UART formatter.
 
 ```powershell
-iverilog -g2012 -o tb\tb_lan_protocol.vvp tb\tb_lan_protocol.v src\ids_udp_feature_rx.v
-vvp tb\tb_lan_protocol.vvp
-iverilog -g2012 -o tb\tb_udp_reply_tx.vvp tb\tb_udp_reply_tx.v src\ids_udp_reply_tx.v src\deps\rmii_serializer.v
-vvp tb\tb_udp_reply_tx.vvp
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify_ip_final_core.ps1
 ```

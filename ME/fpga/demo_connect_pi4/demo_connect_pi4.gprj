@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5A-25B" pn="GW5A-LV25UG324C2/I1">gw5a25b-007</Device>
+    <FileList>
+        <File path="src/uart_rx.v" type="file.verilog" enable="1"/>
+        <File path="src/uart_tx.v" type="file.verilog" enable="1"/>
+        <File path="src/uart_forwarder.v" type="file.verilog" enable="1"/>
+        <File path="constraints/acg525.cst" type="file.cst" enable="1"/>
+        <File path="constraints/acg525.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

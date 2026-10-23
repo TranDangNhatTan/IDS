@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top_acg525_gigabit_clock_diag" Register="105" Alu="97" Lut="48" Ssram="7" T_Register="206(105)" T_Alu="115(97)" T_Lut="217(48)" T_Bsram="1(0)" T_Ssram="7(7)">
+ <SubModule name="pll" T_Register="101(0)" T_Alu="18(0)" T_Lut="169(0)" T_Bsram="1(0)">
+  <SubModule name="u_pll"/>
+  <SubModule name="u_pll_init" Register="101" Alu="18" Lut="169" Bsram="1" T_Register="101(101)" T_Alu="18(18)" T_Lut="169(169)" T_Bsram="1(1)"/>
+ </SubModule>
+</Module>

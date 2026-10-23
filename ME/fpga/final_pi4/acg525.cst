@@ -1,0 +1,24 @@
+// ACG525, GW5A-LV25UG324C2/I1, current board revision.
+// T9 is in a 3.3 V bank and receives the onboard 50 MHz oscillator.
+IO_LOC "clk" T9;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+
+// B16 is in bank 1 powered from VCC1P5 shared with DDR3.  It must not be
+// configured as LVCMOS33.  The pull-up gives a defined inactive reset level.
+IO_LOC "rst_n" B16;
+IO_PORT "rst_n" IO_TYPE=LVCMOS15 PULL_MODE=UP;
+
+// Carrier P6-GPIO0 -> B2B A99 -> core net B2_R9_P -> FPGA C17.
+// C17 is in the 3.3 V bank 2 and receives Raspberry Pi GPIO14/TXD0.
+IO_LOC "uart_rx" C17;
+IO_PORT "uart_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// Board wrapper indicators.  The onboard LED bank is powered at 1.5 V.
+IO_LOC "led[0]" D14;
+IO_LOC "led[1]" C14;
+IO_LOC "led[2]" B9;
+IO_LOC "led[3]" A9;
+IO_PORT "led[0]" IO_TYPE=LVCMOS15 DRIVE=4;
+IO_PORT "led[1]" IO_TYPE=LVCMOS15 DRIVE=4;
+IO_PORT "led[2]" IO_TYPE=LVCMOS15 DRIVE=4;
+IO_PORT "led[3]" IO_TYPE=LVCMOS15 DRIVE=4;

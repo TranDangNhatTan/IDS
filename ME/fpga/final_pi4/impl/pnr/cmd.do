@@ -1,0 +1,18 @@
+-d D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_pi4\impl\gwsynthesis\final_pi4_uart_rx.vg
+-p GW5A-25B-UBGA324-2
+-pn GW5A-LV25UG324C2/I1
+-cst D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_pi4\acg525.cst
+-cfg D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_pi4\impl\pnr\device.cfg
+-sdc D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_pi4\acg525.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 0
+-route_option 0
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 100.000

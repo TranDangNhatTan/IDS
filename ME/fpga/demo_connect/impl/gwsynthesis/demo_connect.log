@@ -1,0 +1,33 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\pll_init.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\gowin_pll\gowin_pll_125m.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\gowin_pll\gowin_pll_125m_mod.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\top_acg525_gigabit_clock_diag.v'
+Compiling module 'top_acg525_gigabit_clock_diag'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\top_acg525_gigabit_clock_diag.v":4)
+Compiling module 'gowin_pll_125m'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\gowin_pll\gowin_pll_125m.v":1)
+Compiling module 'gowin_pll_125m_MOD'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\gowin_pll\gowin_pll_125m_mod.v":3)
+Compiling module 'PLL_INIT(MULTI_FAC=20)'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\pll_init.v":4)
+NOTE  (EX0101) : Current top module is "top_acg525_gigabit_clock_diag"
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input eth_rgmii_rx_clk is unused("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\top_acg525_gigabit_clock_diag.v":5)
+WARN  (CV0016) : Input eth_rgmii_rxd is unused("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\top_acg525_gigabit_clock_diag.v":5)
+WARN  (CV0016) : Input eth_rgmii_rx_ctl is unused("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\src\top_acg525_gigabit_clock_diag.v":5)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\impl\gwsynthesis\demo_connect.vg" completed
+[100%] Generate report file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\demo_connect\impl\gwsynthesis\demo_connect_syn.rpt.html" completed
+GowinSynthesis finish

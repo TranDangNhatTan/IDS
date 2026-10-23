@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top_acg525_ids_core" Register="65" Alu="25" Lut="4" T_Register="2503(65)" T_Alu="142(25)" T_Lut="6368(4)" T_Bsram="8(0)">
- <SubModule name="rx" Register="38" Lut="30" T_Register="38(38)" T_Lut="30(30)"/>
- <SubModule name="udp_rx" Register="1303" Alu="31" Lut="1186" T_Register="1303(1303)" T_Alu="31(31)" T_Lut="1186(1186)"/>
- <SubModule name="classifier" Lut="1" T_Register="789(0)" T_Alu="37(0)" T_Lut="966(1)" T_Bsram="8(0)">
+<Module name="top_acg525_ids_core" Register="517" Alu="102" Lut="56" T_Register="4826(517)" T_Alu="398(102)" T_Lut="7226(56)" T_Bsram="9(0)">
+ <SubModule name="u_eth_rgmii_pll" T_Register="101(0)" T_Alu="18(0)" T_Lut="154(0)" T_Bsram="1(0)">
+  <SubModule name="u_pll"/>
+  <SubModule name="u_pll_init" Register="101" Alu="18" Lut="154" Bsram="1" T_Register="101(101)" T_Alu="18(18)" T_Lut="154(154)" T_Bsram="1(1)"/>
+ </SubModule>
+ <SubModule name="rx_ddr" Register="44" Lut="24" T_Register="44(44)" T_Lut="24(24)"/>
+ <SubModule name="rx_protocol" Register="2829" Alu="186" Lut="4562" T_Register="2829(2829)" T_Alu="186(186)" T_Lut="4562(4562)"/>
+ <SubModule name="ids_core" Lut="1" T_Register="789(0)" T_Alu="35(0)" T_Lut="1225(1)" T_Bsram="8(0)">
   <SubModule name="ingest" Register="335" Lut="2" T_Register="335(335)" T_Lut="536(2)">
    <SubModule name="quantizer" Lut="534" T_Lut="534(534)"/>
   </SubModule>
-  <SubModule name="engine" Register="44" Alu="22" Lut="67" T_Register="454(44)" T_Alu="37(22)" T_Lut="429(67)" T_Bsram="8(0)">
+  <SubModule name="engine" Register="44" Alu="20" Lut="85" T_Register="454(44)" T_Alu="35(20)" T_Lut="688(85)" T_Bsram="8(0)">
    <SubModule name="rom" Register="76" Alu="15" Lut="72" Bsram="8" T_Register="76(76)" T_Alu="15(15)" T_Lut="72(72)" T_Bsram="8(8)"/>
-   <SubModule name="feature_bank" Register="334" Lut="290" T_Register="334(334)" T_Lut="290(290)"/>
+   <SubModule name="feature_bank" Register="334" Lut="531" T_Register="334(334)" T_Lut="531(531)"/>
   </SubModule>
  </SubModule>
- <SubModule name="udp_tx" Register="296" Alu="49" Lut="3789" T_Register="308(296)" T_Alu="49(49)" T_Lut="4182(3789)">
-  <SubModule name="serializer" Register="12" Lut="393" T_Register="12(12)" T_Lut="393(393)"/>
+ <SubModule name="uart_trace" Register="214" Alu="8" Lut="688" T_Register="243(214)" T_Alu="8(8)" T_Lut="733(688)">
+  <SubModule name="tx" Register="29" Lut="45" T_Register="29(29)" T_Lut="45(45)"/>
  </SubModule>
+ <SubModule name="reply_protocol" Register="292" Alu="49" Lut="325" T_Register="292(292)" T_Alu="49(49)" T_Lut="325(325)"/>
+ <SubModule name="tx_ddr" Register="11" Lut="147" T_Register="11(11)" T_Lut="147(147)"/>
 </Module>
