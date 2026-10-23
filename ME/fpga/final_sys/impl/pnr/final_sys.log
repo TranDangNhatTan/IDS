@@ -1,0 +1,29 @@
+Reading netlist file: "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_sys\impl\gwsynthesis\final_sys.vg"
+Parsing netlist file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_sys\impl\gwsynthesis\final_sys.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_sys\constraints\final_sys.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_sys\impl\pnr\final_sys.power.html" completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_sys\impl\pnr\final_sys.pin.html" completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_sys\impl\pnr\final_sys.rpt.html" completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_sys\impl\pnr\final_sys.rpt.txt" completed
+Generate file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\final_sys\impl\pnr\final_sys.tr.html" completed
+Fri Oct 23 21:18:11 2026
+

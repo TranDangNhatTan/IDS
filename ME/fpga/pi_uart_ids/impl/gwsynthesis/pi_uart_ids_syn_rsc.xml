@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top_pi_uart_ids" Register="42" Alu="34" Lut="28" Bsram="18" T_Register="3340(42)" T_Alu="119(34)" T_Lut="4323(28)" T_Bsram="26(18)" T_Ssram="16(0)">
+ <SubModule name="rx0" Register="33" Lut="60" T_Register="33(33)" T_Lut="60(60)"/>
+ <SubModule name="feature_rx" Register="2077" Alu="38" Lut="2634" Ssram="16" T_Register="2077(2077)" T_Alu="38(38)" T_Lut="2634(2634)" T_Ssram="16(16)"/>
+ <SubModule name="model_loader" Register="197" Alu="8" Lut="96" T_Register="197(197)" T_Alu="8(8)" T_Lut="96(96)"/>
+ <SubModule name="classifier" Register="44" Alu="22" Lut="87" T_Register="736(44)" T_Alu="37(22)" T_Lut="769(87)" T_Bsram="8(0)">
+  <SubModule name="rom" Register="76" Alu="15" Lut="73" Bsram="8" T_Register="76(76)" T_Alu="15(15)" T_Lut="73(73)" T_Bsram="8(8)"/>
+  <SubModule name="feature_bank" Register="616" Lut="609" T_Register="616(616)" T_Lut="609(609)"/>
+ </SubModule>
+ <SubModule name="result_tx" Register="224" Alu="2" Lut="689" T_Register="255(224)" T_Alu="2(2)" T_Lut="736(689)">
+  <SubModule name="tx" Register="31" Lut="47" T_Register="31(31)" T_Lut="47(47)"/>
+ </SubModule>
+</Module>

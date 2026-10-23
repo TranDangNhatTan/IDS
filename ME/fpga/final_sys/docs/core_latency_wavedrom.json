@@ -1,0 +1,14 @@
+{
+  "signal": [
+    { "name": "clk (50 MHz)", "wave": "p........" },
+    { "name": "start / feature_valid", "wave": "010000000" },
+    { "name": "FSM", "wave": "=.=.=.=.", "data": ["IDLE", "WAIT", "EVAL", "WAIT", "EVAL", "WAIT", "EVAL", "IDLE"] },
+    { "name": "node_address", "wave": "=..=..=..", "data": ["0", "1", "2"] },
+    { "name": "node evaluation", "wave": "001010100" },
+    { "name": "result_valid", "wave": "000000100" },
+    { "name": "result payload", "wave": "000000=..", "data": ["class, leaf, steps"] }
+  ],
+  "head": { "text": "Decision Tree: 3 visited nodes (root -> node 1 -> leaf 2)" },
+  "foot": { "text": "Example has 3 nodes. Each node uses WAIT + EVAL = 2 clocks; result appears after 2 x node_count clocks from sampled start." },
+  "config": { "hscale": 3 }
+}

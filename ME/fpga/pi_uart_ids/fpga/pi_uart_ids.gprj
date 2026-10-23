@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project><Template>FPGA</Template><Version>5</Version><Device name="GW5A-25B" pn="GW5A-LV25UG324C2/I1">gw5a25b-007</Device><FileList>
+<File path="src/uart_rx_sync.v" type="file.verilog" enable="1"/><File path="src/uart_tx_sync.v" type="file.verilog" enable="1"/>
+<File path="src/cobs_frame_rx_v2.v" type="file.verilog" enable="1"/><File path="src/cobs_frame_tx_v2.v" type="file.verilog" enable="1"/>
+<File path="src/model_manager_v2.v" type="file.verilog" enable="1"/><File path="src/tree_model_dual_bram_v2.v" type="file.verilog" enable="1"/><File path="src/tree_engine_v2.v" type="file.verilog" enable="1"/><File path="src/top_pi_uart_ids.v" type="file.verilog" enable="1"/>
+<File path="../../ip_final/src/deps/ids_node_decoder.v" type="file.verilog" enable="1"/><File path="../../ip_final/src/deps/ids_feature_regfile.v" type="file.verilog" enable="1"/>
+<File path="constraints/pi_uart_ids.cst" type="file.cst" enable="1"/><File path="constraints/pi_uart_ids.sdc" type="file.sdc" enable="1"/>
+</FileList></Project>

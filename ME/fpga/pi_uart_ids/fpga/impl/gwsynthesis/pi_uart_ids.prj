@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW5A-25B" package="UBGA324" speed="2" partNumber="GW5A-LV25UG324C2/I1"/>
+    <FileList>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\fpga\src\uart_rx_sync.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\fpga\src\uart_tx_sync.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\fpga\src\cobs_frame_rx_v2.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\fpga\src\cobs_frame_tx_v2.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\fpga\src\model_manager_v2.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\fpga\src\tree_model_dual_bram_v2.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\fpga\src\tree_engine_v2.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\fpga\src\top_pi_uart_ids.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_node_decoder.v" type="verilog"/>
+        <File path="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_feature_regfile.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="global_freq" value="100.000"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\fpga\impl\gwsynthesis\pi_uart_ids.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="0"/>
+        <Option type="top_module" value="top_pi_uart_ids"/>
+        <Option type="vcc" value="0.9"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>
