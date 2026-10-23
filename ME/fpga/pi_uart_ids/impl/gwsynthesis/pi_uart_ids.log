@@ -1,0 +1,49 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\uart_rx_sync.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\uart_tx_sync.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\feature_frame_rx.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\result_frame_tx.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\top_pi_uart_ids.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\model_update_uart.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_tree_rom_banked.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_tree_engine_live.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_node_decoder.v'
+Analyzing Verilog file 'D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_feature_regfile.v'
+Compiling module 'top_pi_uart_ids'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\top_pi_uart_ids.v":3)
+Extracting RAM for identifier 'fifo_data'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\top_pi_uart_ids.v":36)
+Extracting RAM for identifier 'fifo_seq'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\top_pi_uart_ids.v":37)
+Compiling module 'uart_rx_sync'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\uart_rx_sync.v":2)
+Compiling module 'feature_frame_rx'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\feature_frame_rx.v":4)
+Extracting RAM for identifier 'enc'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\feature_frame_rx.v":10)
+Compiling module 'model_update_uart'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\model_update_uart.v":7)
+Compiling module 'ids_tree_engine_live'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_tree_engine_live.v":2)
+Compiling module 'ids_tree_rom_banked'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_tree_rom_banked.v":5)
+Compiling module 'ids_node_decoder'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_node_decoder.v":1)
+Compiling module 'ids_feature_regfile'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\deps\ids_feature_regfile.v":1)
+Compiling module 'result_frame_tx'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\result_frame_tx.v":3)
+Extracting RAM for identifier 'enc'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\result_frame_tx.v":4)
+Compiling module 'uart_tx_sync'("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\uart_tx_sync.v":2)
+WARN  (EX3791) : Expression size 10 truncated to fit in target size 9("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\result_frame_tx.v":18)
+WARN  (EX3791) : Expression size 20 truncated to fit in target size 5("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\src\result_frame_tx.v":20)
+NOTE  (EX0101) : Current top module is "top_pi_uart_ids"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "ids_node_decoder" instantiated to "decoder" is swept in optimizing("D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\ip_final\src\ids_tree_engine_live.v":23)
+[95%] Generate netlist file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\impl\gwsynthesis\pi_uart_ids.vg" completed
+[100%] Generate report file "D:\TranDangNhatTan_24IC054_VKU\Junior\FPGA_MCU_IDS\ME\fpga\pi_uart_ids\impl\gwsynthesis\pi_uart_ids_syn.rpt.html" completed
+GowinSynthesis finish

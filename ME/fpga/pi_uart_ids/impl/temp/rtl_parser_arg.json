@@ -1,0 +1,53 @@
+{
+ "Device" : "GW5A-25B",
+ "Files" : [
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/uart_rx_sync.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/uart_tx_sync.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/feature_frame_rx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/result_frame_tx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/top_pi_uart_ids.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/model_update_uart.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/ids_tree_rom_banked.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/ids_tree_engine_live.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/deps/ids_node_decoder.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/deps/ids_feature_regfile.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/impl/temp/rtl_parser.result",
+ "Top" : "top_pi_uart_ids",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

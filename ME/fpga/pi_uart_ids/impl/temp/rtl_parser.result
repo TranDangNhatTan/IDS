@@ -1,0 +1,88 @@
+[
+ {
+  "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/top_pi_uart_ids.v",
+  "InstLine" : 3,
+  "InstName" : "top_pi_uart_ids",
+  "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/top_pi_uart_ids.v",
+  "ModuleLine" : 3,
+  "ModuleName" : "top_pi_uart_ids",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/top_pi_uart_ids.v",
+    "InstLine" : 63,
+    "InstName" : "rx0",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/uart_rx_sync.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "uart_rx_sync"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/top_pi_uart_ids.v",
+    "InstLine" : 65,
+    "InstName" : "feature_rx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/feature_frame_rx.v",
+    "ModuleLine" : 4,
+    "ModuleName" : "feature_frame_rx"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/top_pi_uart_ids.v",
+    "InstLine" : 69,
+    "InstName" : "model_loader",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/model_update_uart.v",
+    "ModuleLine" : 7,
+    "ModuleName" : "model_update_uart"
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/top_pi_uart_ids.v",
+    "InstLine" : 75,
+    "InstName" : "classifier",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/ids_tree_engine_live.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "ids_tree_engine_live",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/ids_tree_engine_live.v",
+      "InstLine" : 21,
+      "InstName" : "rom",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/ids_tree_rom_banked.v",
+      "ModuleLine" : 5,
+      "ModuleName" : "ids_tree_rom_banked"
+     },
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/ids_tree_engine_live.v",
+      "InstLine" : 23,
+      "InstName" : "decoder",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/deps/ids_node_decoder.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "ids_node_decoder"
+     },
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/ids_tree_engine_live.v",
+      "InstLine" : 24,
+      "InstName" : "feature_bank",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/ip_final/src/deps/ids_feature_regfile.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "ids_feature_regfile"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/top_pi_uart_ids.v",
+    "InstLine" : 83,
+    "InstName" : "result_tx",
+    "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/result_frame_tx.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "result_frame_tx",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/result_frame_tx.v",
+      "InstLine" : 7,
+      "InstName" : "tx",
+      "ModuleFile" : "D:/TranDangNhatTan_24IC054_VKU/Junior/FPGA_MCU_IDS/ME/fpga/pi_uart_ids/src/uart_tx_sync.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "uart_tx_sync"
+     }
+    ]
+   }
+  ]
+ }
+]

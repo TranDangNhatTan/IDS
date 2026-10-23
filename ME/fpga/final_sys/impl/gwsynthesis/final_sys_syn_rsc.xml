@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top_final_sys" Register="40" Alu="34" Lut="27" Bsram="18" T_Register="2643(40)" T_Alu="121(34)" T_Lut="4560(27)" T_Bsram="26(18)" T_Ssram="16(0)">
+ <SubModule name="rx_features" Register="33" Lut="60" T_Register="33(33)" T_Lut="60(60)"/>
+ <SubModule name="rx_usb" Register="33" Lut="59" T_Register="33(33)" T_Lut="59(59)"/>
+ <SubModule name="frames" Register="1351" Alu="38" Lut="3038" Ssram="16" T_Register="1351(1351)" T_Alu="38(38)" T_Lut="3038(3038)" T_Ssram="16(16)"/>
+ <SubModule name="updater" Register="197" Alu="8" Lut="95" T_Register="197(197)" T_Alu="8(8)" T_Lut="95(95)"/>
+ <SubModule name="engine" Register="44" Alu="22" Lut="70" T_Register="736(44)" T_Alu="37(22)" T_Lut="594(70)" T_Bsram="8(0)">
+  <SubModule name="rom" Register="76" Alu="15" Lut="73" Bsram="8" T_Register="76(76)" T_Alu="15(15)" T_Lut="73(73)" T_Bsram="8(8)"/>
+  <SubModule name="feature_bank" Register="616" Lut="451" T_Register="616(616)" T_Lut="451(451)"/>
+ </SubModule>
+ <SubModule name="results" Register="223" Alu="4" Lut="642" T_Register="253(223)" T_Alu="4(4)" T_Lut="687(642)">
+  <SubModule name="tx" Register="30" Lut="45" T_Register="30(30)" T_Lut="45(45)"/>
+ </SubModule>
+</Module>
