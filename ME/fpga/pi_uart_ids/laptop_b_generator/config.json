@@ -1,0 +1,13 @@
+{
+    "interface": "Ethernet 2",
+    "pi_mac": "2c:cf:67:90:4b:c2",
+    "pi_ip": "192.168.10.2",
+    "dst_port": 40000,
+    "src_ip": "",
+    "src_mac": "",
+    "packet_count": 10,
+    "rate_pps": 5.0,
+    "payload_size": 64,
+    "start_sequence": 1,
+    "web_server_port": 5000
+}
