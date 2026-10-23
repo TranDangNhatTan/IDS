@@ -1,54 +1,51 @@
-# Prompt A — FPGA implementation on the current machine
+# Prompt A — ACG525 FPGA IDS + volatile UART model loader
 
-You are a senior Gowin FPGA engineer. Implement a new, standalone project at
-`ME/fpga/pi_uart_ids/`. Do not modify `ME/fpga/ip_final*` or
-`ME/fpga/demo_connect_pi4`.
+You are a senior Gowin FPGA engineer. Implement a new standalone project under
+`ME/fpga/pi_uart_ids/fpga/`. Do not modify `ME/fpga/ip_final*` or
+`ME/fpga/demo_connect_pi4`. Read `../PROTOCOL_CONTRACT.md` completely and
+implement protocol v2 exactly.
 
-Read and obey `PROTOCOL_CONTRACT.md` exactly. It is the UART ABI with the Pi
-server and Laptop B test generator.
+## Required behavior
 
-## Goal
+FPGA receives the model only from Pi UART after each FPGA boot, validates and
+commits it into writable BRAM, then receives already-encoded FEATURE records,
+runs the existing decision-tree model, and sends binary RESULT frames to Pi.
+It never handles Ethernet. The active model must survive a failed subsequent
+upload but is expected to disappear after FPGA configuration/reset.
 
-The FPGA receives already-quantized 28 x 22-bit feature records from Pi over
-UART, classifies them using the existing Decision Tree / BRAM model, then
-returns a binary RESULT frame to Pi. The FPGA must not receive, parse, forward,
-or transmit Ethernet frames in this project.
+## Fixed hardware
 
-## Hardware constraints
+* GW5A-LV25UG324C2/I1, device version B.
+* Clock: **50 MHz**, T9, LVCMOS33. Do not use 500 MHz unless the board receives
+  a separately verified 500-MHz clock and constraints are changed deliberately.
+* Reset: B16, active-low, LVCMOS15 with pull-up.
+* UART RX: C17 / P6 GPIO0, LVCMOS33 pull-up; Pi GPIO14 pin 8 drives it.
+* UART TX: G14 / P6 GPIO3, LVCMOS33 pull-up, drive 8; drives Pi GPIO15 pin 10.
+* GND is common. UART is 115200 8N1, one 50-MHz synchronous domain, RX double
+  synchronizer and centre sampling; no generated/gated clocks.
 
-* Device: GW5A-LV25UG324C2/I1, device version B.
-* 50 MHz clock: T9, LVCMOS33.
-* Reset active-low: B16, LVCMOS15, pull-up.
-* UART RX from Pi: C17, LVCMOS33, pull-up.
-* UART TX to CH9102F: V8, LVCMOS33, pull-up, drive 8.
-* UART uses 115200 8N1, one 50 MHz clock domain only; no generated/gated clock.
-* UART RX has a two-flip-flop synchronizer and centre sampling.
+## RTL
 
-## RTL requirements
+Provide readable Verilog-2001 modules for UART RX/TX, COBS RX/TX, CRC16,
+protocol dispatcher, model staging writer/bitmap/CRC32, dual-bank or otherwise
+transactional model BRAM, classifier adapter, 4+ deep 616-bit feature FIFO,
+RESULT encoder, and `top_pi_uart_ids.v`.
 
-Create separate readable Verilog-2001 modules for UART RX/TX, COBS frame RX,
-CRC16, feature unpacker, feature FIFO, classifier adapter, result frame TX,
-and `top_pi_uart_ids.v`.
+Reuse verified tree semantics/model word format from `ip_final`, but do not use
+`ids_feature_quantizer`: 22-bit features are pre-encoded. Enforce v2 BEGIN,
+WRITE, COMMIT, STATUS and ACK status codes exactly. ACK every valid request;
+MODEL_WRITE duplicates must be idempotent. Do not accept FEATURE until a model
+is committed. Preserve feature sequence in RESULT. Expose safe sticky counters
+for malformed COBS/CRC, upload errors, accepted nodes, active model version,
+feature FIFO overflow, accepted features, results, and classifier errors.
 
-The classifier adapter must reuse the verified Decision Tree/BRAM implementation
-from `ip_final`, but bypass `ids_feature_quantizer`: its input is already 28 x
-22-bit encoded data. Preserve the model BRAM update/activation capability or
-provide a documented model preload image. Do not silently change model format.
+## Verification and delivery
 
-Use a FIFO of at least four 616-bit feature records. Reject malformed frames
-without changing FIFO state. Preserve and return the FEATURE sequence. Provide
-sticky counters for malformed COBS, bad CRC, feature FIFO overflow, accepted
-records, result frames, and classifier errors. Export only safe debug signals;
-do not flood UART with ASCII logs.
-
-## Mandatory verification
-
-Create self-checking simulation that covers: valid feature frame, COBS byte
-zero in payload, bad CRC, invalid length, back-to-back records, FIFO full,
-sequence preservation, result decoding, reset, and a known golden feature
-vector matching the existing Decision Tree result.
-
-Run simulation, Gowin synthesis and P&R. Require setup violations = 0 and hold
-violations = 0. Produce a pin report confirming T9/B16/C17/V8 and copy the final
-bitstream to `release/pi_uart_ids.fs`. Add a README with programming and wiring
-instructions. Do not claim hardware PASS without a Pi hardware log.
+Create self-checking simulation for COBS zero bytes, bad CRC/length/version,
+model BEGIN/1,273 WRITE/COMMIT success, duplicate write, bad index, missing
+node, bad image CRC, failed upload retaining old model, reset requiring upload,
+back-to-back FEATURE, FIFO full, sequence preservation and golden inference.
+Run synthesis/P&R with zero setup and hold violations. Deliver constraints,
+pin/timing reports, README/programming instructions, tests, and
+`release/pi_uart_ids.fs`. Do not claim hardware pass without a Pi capture log
+showing MODEL_COMMIT_ACK and a matching FEATURE/RESULT pair.

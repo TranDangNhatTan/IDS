@@ -1,47 +1,62 @@
-# Prompt B — Raspberry Pi server implementation
+# Prompt B — Raspberry Pi server, model owner, and operations dashboard
 
-You are a senior Raspberry Pi 4/Linux networking and Python engineer. Create a
-Pi server project under `ME/fpga/pi_uart_ids/pi_server/`. Read
-`../PROTOCOL_CONTRACT.md` first and implement it exactly. Do not change the
-protocol contract or FPGA RTL.
+You are a senior Raspberry Pi 4/Linux networking and Python engineer. Implement
+under `ME/fpga/pi_uart_ids/pi_server/`. Read `../PROTOCOL_CONTRACT.md`
+completely and implement protocol v2 exactly. Do not invent a second wire
+protocol.
 
 ## Role
 
-Pi is the server. It captures raw Ethernet test traffic on `eth0`, produces the
-28 already-encoded 22-bit features required by the model, sends FEATURE frames
-to FPGA, receives RESULT frames, and serves a dashboard to Laptop B.
+Pi is the only server. Laptop B injects test traffic through Ethernet; Pi
+captures it on eth0, creates 28 already-encoded features, sends them to FPGA,
+receives RESULT, and serves the dashboard at port 8080. Pi permanently stores
+the fixed model file `ME/hw/model_export/dt_fpga_flow28_fixed/node_rom.hex`.
+After every FPGA boot, operator-triggered or automatic model upload sends the
+whole 1,273-node image through `/dev/serial0` and must finish successfully
+before inference is enabled.
+
+## Network and UART
+
+* Default isolated test LAN: Pi `eth0` `192.168.10.2/24`; Laptop B Ethernet
+  `192.168.10.1/24`; dashboard `http://192.168.10.2:8080`.
+* Single direct TTL UART: `/dev/serial0`, GPIO14 TX pin 8 → FPGA C17/P6 GPIO0;
+  FPGA G14/P6 GPIO3 → Pi GPIO15 RX pin 10; pin 6/common GND; 3.3 V only.
+* UART is 115200 8N1/no flow control. Serial login shell must be disabled and
+  hardware UART enabled in `raspi-config`. Document `dialout` and `CAP_NET_RAW`.
 
 ## Required components
 
-* `config.json`: eth interface, Pi data IP, dashboard port 8080, UART TX port
-  `/dev/serial0`, explicit UART RX CH9102F device, baud, timeouts and retry
-  limit. Do not hardcode these settings in Python.
-* `protocol.py`: COBS, CRC-16/CCITT-FALSE, feature 22-bit pack/unpack, frame
-  codec, strict validation and unit tests using the protocol contract vectors.
-* `capture.py`: capture Ethernet/IPv4/UDP destination port 40000 on `eth0`;
-  validate `IDSRAW1` and the little-endian source sequence. Support promiscuous
-  mode only when configured. Handle malformed traffic without crashing.
-* `features.py`: one documented canonical mapping of captured traffic into 28
-  features. Apply the exact feature order, scale and saturation from
-  `ip_final/src/deps/ids_feature_quantizer.v`; do not invent a second mapping.
-* `uart_client.py`: opens `/dev/serial0` TX and the configured `/dev/ttyUSB*`
-  RX independently at 115200 8N1/no flow control. One outstanding FEATURE
-  transaction, timeout/retry twice, sequence matching and result deduplication.
-* `app.py`: lightweight FastAPI or Flask dashboard/API. Show capture count,
-  accepted UART records, retry/timeout/CRC errors, result count, last sequence,
-  class, leaf, steps, error, and timestamps. Never claim accuracy without labels.
-* `run_server.py`: single command launcher with clear startup diagnostics.
+* `config.json`: interface, Pi IP, port, UART configuration, timeouts/retries,
+  model path/version, expected node count 1273, and log rotation settings.
+* `protocol.py`: v2 COBS, CRC16, CRC32 image calculation, strict frame codec,
+  feature pack/unpack, model payload codecs and contract-vector tests.
+* `model_loader.py`: parse only 1,273 valid 16-hex-digit `node_rom.hex` words;
+  convert each word to little-endian u64, calculate image CRC32, stop-and-wait
+  BEGIN/WRITE/COMMIT with sequence matching/retry twice, STATUS recovery and
+  progress callbacks. Never mark model active without COMMIT_ACK status OK.
+* `capture.py`: safely capture Ethernet/IPv4/UDP port 40000 on eth0, validate
+  `IDSRAW1 | sequence:u32-le`, handle malformed frames without crashing.
+* `features.py`: one documented mapping only; exact RTL order/scaling/caps.
+* `uart_client.py`: serialize model loading and FEATURE requests on the same
+  full-duplex UART. No FEATURE during upload; one outstanding transaction.
+* `app.py`: professional realtime dashboard/API with capture/UART link state,
+  rates/bytes, CRC/retry/timeout errors, model version/status/progress, latest
+  RESULT and event log. Add a dashboard action to upload a `.hex` file to Pi,
+  validate it, retain it locally, and then start model load. Do not claim model
+  active until FPGA COMMIT_ACK. No login is required on this isolated test LAN.
+* `run_server.py`: diagnostics for IP binding, raw-capture permission, serial
+  port, FPGA model status and clear startup guidance.
 
-## Operational requirements
+## Traffic/results
 
-Use a Python virtual environment and PySerial. Document `raspi-config`: serial
-login shell disabled, serial hardware enabled. Ensure the user has dialout
-permission. Provide `systemd` service example but do not automatically install
-or enable it. Log JSON Lines with rotation.
+Laptop B source is `IDSRAW1` UDP port 40000 only. Support optional test labels
+carried/configured by Laptop B and show prediction-versus-label metrics only
+for that explicitly labelled test run; never claim accuracy for live unlabelled
+traffic. When FPGA is offline or its model is inactive, retain safe dashboard
+errors and stop FEATURE transmission instead of building an unbounded queue.
 
-## Tests and handoff
+## Handoff
 
-Provide unit tests for the protocol and feature pack/unpack, plus a mock UART
-test with known RESULT frames. Provide commands to find the CH9102F port with
-`python3 -m serial.tools.list_ports`. The dashboard must bind to the configured
-Pi network address so Laptop B can open `http://<pi-ip>:8080`.
+Use the existing venv `/home/vdas/Desktop/projects/pjs-env`, PySerial, JSONL
+rotated logs, tests for protocol/model parser/mock UART and Flask API, plus a
+systemd example (do not install it). Provide run/upload/recovery instructions.
