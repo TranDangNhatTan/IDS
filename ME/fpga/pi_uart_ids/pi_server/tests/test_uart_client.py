@@ -9,5 +9,5 @@ class FakeSerial:
 class UartTests(unittest.TestCase):
  def test_known_result(self):
   got=[]; client=UartClient({"uart_retry_limit":0,"uart_timeout_ms":20},lambda *v:got.append(v),lambda *_:None)
-  client.serial=FakeSerial(encode_frame(RESULT_TYPE,7,bytes([3,0x34,0x12,9,0,2,0])))
+  client.serial=FakeSerial(encode_frame(RESULT_TYPE,7,bytes([3,0x34,0x12,9,0,2,0]))); client.model_active=True
   self.assertTrue(client.transact(7,[0]*28)); self.assertEqual(got[0][1]["leaf_node"],0x1234)

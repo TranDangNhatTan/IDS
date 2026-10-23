@@ -1,5 +1,5 @@
 from __future__ import annotations
-import json, logging, sys, threading, time
+import json, logging, sys, threading, time, tempfile
 import socket
 from collections import deque
 from logging.handlers import RotatingFileHandler
@@ -9,11 +9,12 @@ from app import make_app
 from capture import EthernetCapture
 from features import FeatureMapper
 from uart_client import UartClient
+from model_loader import ModelLoader, load_model
 
 ROOT = Path(__file__).resolve().parent
 class State:
     def __init__(self):
-        self.data = {"capture_count":0,"capture_bytes":0,"accepted_uart_records":0,"retries":0,"timeouts":0,"crc_errors":0,"result_count":0,"last_sequence":None,"class_id":None,"leaf_node":None,"step_count":None,"error_code":None,"model_version":None,"last_capture_at":None,"last_result_at":None,"last_source":None,"last_error":None,"connections":{"capture":{"state":"starting","label":"Starting","detail":"Opening raw Ethernet socket"},"uart":{"state":"starting","label":"Starting","detail":"Opening serial device"}}}
+        self.data = {"capture_count":0,"capture_bytes":0,"accepted_uart_records":0,"retries":0,"timeouts":0,"crc_errors":0,"result_count":0,"last_sequence":None,"class_id":None,"leaf_node":None,"step_count":None,"error_code":None,"model_version":None,"last_capture_at":None,"last_result_at":None,"last_source":None,"last_error":None,"model":{"state":"inactive","accepted_count":0,"node_count":1273,"crc32":None,"active_version":None,"detail":"Upload required after FPGA boot"},"connections":{"capture":{"state":"starting","label":"Starting","detail":"Opening raw Ethernet socket"},"uart":{"state":"starting","label":"Starting","detail":"Opening serial device"}}}
         self.lock=threading.Lock(); self.captures=deque(); self.results=deque(); self.events=deque(maxlen=30)
     def update(self, **items):
         with self.lock: self.data.update(items)
@@ -35,6 +36,27 @@ class State:
             view=dict(self.data); view["connections"]={key:dict(value) for key,value in self.data["connections"].items()}; view["events"]=list(self.events)
             view["capture_rate_pps"]=len(self.captures)/10; view["result_rate_pps"]=len(self.results)/10; view["capture_bytes_per_second"]=sum(item[1] for item in self.captures)/10
             return view
+class ModelService:
+    def __init__(self, root, config, uart, state, event): self.root,self.config,self.uart,self.state,self.event=root,config,uart,state,event;self.lock=threading.Lock()
+    def save_and_start(self, upload):
+        if not self.lock.acquire(blocking=False): raise ValueError("model upload is already running")
+        target=self.root/self.config["model_storage_path"];target.parent.mkdir(exist_ok=True)
+        with tempfile.NamedTemporaryFile(dir=target.parent,delete=False) as temp: upload.save(temp); temporary=Path(temp.name)
+        try: load_model(temporary)
+        except Exception: temporary.unlink(missing_ok=True);self.lock.release();raise
+        temporary.replace(target); self.start(target,locked=True); return {"accepted":True,"message":"model stored; UART upload started"}
+    def start(self,path=None,locked=False):
+        if not locked and not self.lock.acquire(blocking=False): return False
+        path=Path(path or self.root/self.config["model_path"])
+        def progress(stage,count,total,crc,version=None): self.state.update(model={"state":stage,"accepted_count":count,"node_count":total,"crc32":f"{crc:08x}","active_version":version,"detail":f"{count}/{total} nodes"})
+        def work():
+            self.uart.model_active=False
+            try:
+                self.state.update(model={"state":"starting","accepted_count":0,"node_count":self.config["expected_node_count"],"crc32":None,"active_version":None,"detail":path.name})
+                reply=ModelLoader(self.uart,self.config["model_version"],progress,self.event).upload(path);self.uart.model_active=True;self.event("model_active",version=reply["model_version"])
+            except Exception as error:self.state.update(model={"state":"error","accepted_count":0,"node_count":self.config["expected_node_count"],"crc32":None,"active_version":None,"detail":str(error)});self.event("model_error",detail=str(error))
+            finally:self.lock.release()
+        threading.Thread(target=work,daemon=True).start();return True
 def main():
     config = json.loads((ROOT / "config.json").read_text())
     log_file = ROOT / config["log_path"]; log_file.parent.mkdir(exist_ok=True)
@@ -76,7 +98,9 @@ def main():
         print(f"Capture startup failed: {error}", file=sys.stderr)
         return 4
     state.update(connections={**state.data["connections"], "capture":{"state":"connected","label":"Listening · UDP 40000","detail":f"{config['interface']} · IDSRAW1"}})
+    model_service = ModelService(ROOT, config, uart, state, event)
+    if config.get("auto_load_model"): model_service.start()
     print(f"UART {config['uart_port']} at {config['baudrate']} 8N1; dashboard http://{config['pi_data_ip']}:{config['dashboard_port']}")
     threading.Thread(target=capture.run, daemon=True).start()
-    make_app(state).run(host=config["pi_data_ip"], port=config["dashboard_port"], threaded=True)
+    make_app(state, model_service).run(host=config["pi_data_ip"], port=config["dashboard_port"], threaded=True)
 if __name__ == "__main__": raise SystemExit(main())

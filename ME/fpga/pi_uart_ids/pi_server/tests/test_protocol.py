@@ -10,3 +10,6 @@ class ProtocolTests(unittest.TestCase):
  def test_crc_rejected(self):
   wire=bytearray(encode_frame(RESULT_TYPE,1,bytes(7))); wire[2]^=1
   with self.assertRaises(ProtocolError): decode_frame(bytes(wire))
+ def test_model_frame_and_crc32(self):
+  words=[0]*NODE_COUNT; payload=model_begin_payload(image_crc32(words),1)
+  self.assertEqual(decode_frame(encode_frame(MODEL_BEGIN,9,payload))[:2],(MODEL_BEGIN,9))
