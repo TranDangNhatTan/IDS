@@ -5,9 +5,10 @@ import struct
 VERSION=2; MODEL_BEGIN,MODEL_WRITE,MODEL_COMMIT,MODEL_STATUS=1,2,3,4
 MODEL_BEGIN_ACK,MODEL_WRITE_ACK,MODEL_COMMIT_ACK,MODEL_STATUS_REPLY=0x81,0x82,0x83,0x84
 FEATURE_TYPE,RESULT_TYPE=0x10,0x20
+TRACE_TYPE=0x90
 FEATURE_COUNT,FEATURE_WIDTH,FEATURE_PAYLOAD_LEN,RESULT_PAYLOAD_LEN=28,22,77,7
 NODE_COUNT,NODE_WORD_BYTES=1273,8; MAX_FEATURE=(1<<FEATURE_WIDTH)-1
-PAYLOAD_LENGTHS={MODEL_BEGIN:8,MODEL_BEGIN_ACK:5,MODEL_WRITE:10,MODEL_WRITE_ACK:5,MODEL_COMMIT:6,MODEL_COMMIT_ACK:5,MODEL_STATUS:0,MODEL_STATUS_REPLY:5,FEATURE_TYPE:77,RESULT_TYPE:7}
+PAYLOAD_LENGTHS={MODEL_BEGIN:8,MODEL_BEGIN_ACK:5,MODEL_WRITE:10,MODEL_WRITE_ACK:5,MODEL_COMMIT:6,MODEL_COMMIT_ACK:5,MODEL_STATUS:0,MODEL_STATUS_REPLY:5,FEATURE_TYPE:77,RESULT_TYPE:7,TRACE_TYPE:16}
 STATUS={0:"OK",1:"BAD_STATE",2:"BAD_INDEX",3:"BAD_COUNT",4:"IMAGE_CRC",5:"BUSY",6:"UNSUPPORTED_VERSION"}
 class ProtocolError(ValueError): pass
 def crc16_ccitt_false(data:bytes)->int:
@@ -72,3 +73,6 @@ def decode_write_ack(payload:bytes)->dict:
  status,index,count=struct.unpack("<BHH",payload);return {"status":status,"status_name":STATUS.get(status,"UNKNOWN"),"node_index":index,"accepted_count":count}
 def decode_result(payload:bytes)->dict:
  class_id,leaf_node,step_count,error_code,model_version=struct.unpack("<BHBBH",payload);return {"class_id":class_id,"leaf_node":leaf_node,"step_count":step_count,"error_code":error_code,"model_version":model_version}
+def decode_trace(payload:bytes)->dict:
+ rx,frames,upload_errors,nodes,flags,last_type=struct.unpack("<IIIHBB",payload)
+ return {"rx_bytes":rx,"valid_frames":frames,"upload_errors":upload_errors,"accepted_nodes":nodes,"error_flags":flags,"last_frame_type":last_type}

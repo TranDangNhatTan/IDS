@@ -55,6 +55,7 @@ little-endian. It is not a CRC of ASCII text.
 | FPGA → Pi | `0x83` | MODEL_COMMIT_ACK | `status:u8 | accepted_count:u16 | active_model_version:u16` (5 bytes) |
 | Pi → FPGA | `0x04` | MODEL_STATUS | empty (0 bytes) |
 | FPGA → Pi | `0x84` | MODEL_STATUS_REPLY | `status:u8 | accepted_count:u16 | active_model_version:u16` (5 bytes) |
+| FPGA → Pi | `0x90` | TRACE | `rx_bytes:u32 | valid_frames:u32 | upload_errors:u32 | accepted_nodes:u16 | error_flags:u8 | last_frame_type:u8` (16 bytes) |
 
 Status: `0=OK`, `1=BAD_STATE`, `2=BAD_INDEX`, `3=BAD_COUNT`, `4=IMAGE_CRC`,
 `5=BUSY`, `6=UNSUPPORTED_VERSION`. The FPGA clears the staging-valid bitmap on
@@ -65,6 +66,11 @@ unchanged. FPGA must not accept FEATURE while upload/commit is incomplete.
 
 Pi performs stop-and-wait for BEGIN, every WRITE, and COMMIT, shows confirmed
 node count/progress in the dashboard, and retries a request at most twice.
+
+For hardware diagnosis, FPGA also emits an unsolicited TRACE frame roughly
+every 100 ms. `error_flags` bit 0..5 are respectively bad COBS, CRC, length,
+version, UART framing, FIFO overflow. Pi logs/displays it but never treats it
+as an ACK. TRACE proves FPGA TX works even when an inbound request is malformed.
 
 ## Inference
 

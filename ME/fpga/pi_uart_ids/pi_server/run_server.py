@@ -14,7 +14,7 @@ from model_loader import ModelLoader, load_model
 ROOT = Path(__file__).resolve().parent
 class State:
     def __init__(self):
-        self.data = {"capture_count":0,"capture_bytes":0,"accepted_uart_records":0,"retries":0,"timeouts":0,"crc_errors":0,"result_count":0,"last_sequence":None,"class_id":None,"leaf_node":None,"step_count":None,"error_code":None,"model_version":None,"last_capture_at":None,"last_result_at":None,"last_source":None,"last_error":None,"model":{"state":"inactive","accepted_count":0,"node_count":1273,"crc32":None,"active_version":None,"detail":"Upload required after FPGA boot"},"connections":{"capture":{"state":"starting","label":"Starting","detail":"Opening raw Ethernet socket"},"uart":{"state":"starting","label":"Starting","detail":"Opening serial device"}}}
+        self.data = {"capture_count":0,"capture_bytes":0,"accepted_uart_records":0,"retries":0,"timeouts":0,"crc_errors":0,"result_count":0,"last_sequence":None,"class_id":None,"leaf_node":None,"step_count":None,"error_code":None,"model_version":None,"last_capture_at":None,"last_result_at":None,"last_source":None,"last_error":None,"fpga_trace":None,"model":{"state":"inactive","accepted_count":0,"node_count":1273,"crc32":None,"active_version":None,"detail":"Upload required after FPGA boot"},"connections":{"capture":{"state":"starting","label":"Starting","detail":"Opening raw Ethernet socket"},"uart":{"state":"starting","label":"Starting","detail":"Opening serial device"}}}
         self.lock=threading.Lock(); self.captures=deque(); self.results=deque(); self.events=deque(maxlen=30)
     def update(self, **items):
         with self.lock: self.data.update(items)
@@ -73,8 +73,12 @@ def main():
         if kind == "retry": state.increment("retries")
         elif kind == "timeout": state.increment("timeouts")
         elif kind == "crc": state.increment("crc_errors")
-        state.update(last_error=detail); event("uart_"+kind,detail=detail)
-    uart = UartClient(config, result, uart_error)
+        if kind != "tx": state.update(last_error=detail)
+        event("uart_"+kind,detail=detail)
+    def uart_trace(value):
+        state.update(fpga_trace=value)
+        event("fpga_trace",detail=f"rx={value['rx_bytes']} frames={value['valid_frames']} flags=0x{value['error_flags']:02x} nodes={value['accepted_nodes']} upload_errors={value['upload_errors']}")
+    uart = UartClient(config, result, uart_error, uart_trace)
     try: uart.open()
     except Exception as error: print(f"UART open failed ({config['uart_port']}): {error}", file=sys.stderr); return 2
     state.update(connections={**state.data["connections"], "uart":{"state":"connected","label":"Connected · 115200 8N1","detail":config["uart_port"]}})
